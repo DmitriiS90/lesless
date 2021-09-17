@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Rubik;
+}
+.container {
+  width: 1207px;
+  margin: 0 auto;
+}
+.header {
+  margin-top: 20px;
+  display: flex;
+}
+.logo {
+  display: flex;
+}
+.logo p {
+  align-self: center;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.main-menu {
+  flex-grow: 1;
+}
+.main-menu-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+.main-menu-list a {
+  color: #4f5665;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+}
+.login button {
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 19px;
+  width: 150px;
+  height: 45px;
+  border: #f53855 1px solid;
+  border-radius: 50px;
+  color: #f53855;
+  background-color: #ffffff;
+}
+.about {
+  margin-top: 100px;
+  display: flex;
+}
+.about-info {
+  width: 555px;
+  height: 220px;
+  flex: 1 0 auto;
+}
+.about-info h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 70px;
+  color: #0b132a;
+}
+.about-info p {
+  line-height: 30px;
+  padding: 20px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #4f5665;
+}
+.about-info button {
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  background: #f53838;
+  border-radius: 10px;
+  color: #ffffff;
+}
+.about-img {
+  width: 611.24px;
+  height: 382.44px;
+}
+.statistics {
+  margin-top: 103px;
+  display: flex;
+  justify-content: space-around;
+}
+.statistics-item {
+  display: flex;
+}
+.statistics-item p {
+  padding-left: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0b132a;
+}
+.statistics-item span {
+  font-size: 20px;
+  line-height: 30px;
+  color: #4f5665;
+}
+.features {
+  margin-top: 100px;
+  display: flex;
+}
+.features-img {
+  flex: 1 0 auto;
+}
+.features-info {
+  width: 427px;
+  height: 365px;
+  font-style: normal;
+}
+.features-info h2 {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50px;
+  color: #0b132a;
+}
+.features-info p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4f5665;
+  padding: 10px 0;
+}
+.features-info ul {
+  list-style: none;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #4f5665;
+}
+.features-info li {
+  padding-left: 30px;
+  background-image: url(img/bx_bxs-check-circle.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.tariffs {
+  margin-top: 100px;
+  text-align: center;
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tariffs .tariffs-heading {
+  width: 100%;
+}
+.tariffs h2 {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50px;
+  color: #0b132a;
+}
+.tariffs p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4f5665;
+}
+.tariff {
+  flex: 1 0 auto;
+  margin-top: 50px;
+  margin-left: 30px;
+  padding: 100px;
+  width: 330px;
+  height: 760px;
+  background: #ffffff;
+  border: 2px solid #dddddd;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.tariff:hover {
+  border-color: #f53838;
+}
+.tariff h3 {
+  padding: 30px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 30px;
+}
+.tariff ul {
+  list-style: none;
+  width: 190.54px;
+  height: 230px;
+}
+.tariff li {
+  text-align: left;
+  padding-left: 25px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #4f5665;
+  width: 181.17px;
+  height: 30px;
+  background-image: url(img/mark.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.tariff p {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0b132a;
+}
+.tariff span {
+  color: #4f5665;
+}
+.tariff button {
+  margin-top: 20px;
+  width: 177.88px;
+  height: 45px;
+  cursor: pointer;
+  border: #f53838 2px solid;
+  border-radius: 50px;
+  color: #f53838;
+}
+.tariff button:hover {
+  background: #f53838;
+  color: #ffffff;
+}
+.map {
+  text-align: center;
+  font-style: normal;
+}
+.map .map-heading {
+  margin-top: 150px;
+  margin-bottom: 155px;
+}
+.map h2 {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50px;
+  color: #0b132a;
+}
+.map p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  color: #4f5665;
+}
+.map span {
+  font-weight: 500;
+}
+.stories {
+  text-align: center;
+}
+.stories .stories-heading {
+  margin-top: 50px;
+}
