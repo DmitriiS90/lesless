@@ -218,6 +218,7 @@ body {
   width: 177.88px;
   height: 45px;
   cursor: pointer;
+  background: #ffffff;
   border: #f53838 2px solid;
   border-radius: 50px;
   color: #f53838;
@@ -307,11 +308,16 @@ body {
   flex: 1 0 auto;
   align-self: flex-end;
 }
-.card .star {
-  background: url(img/ant-design_star-filled.svg) no-repeat;
-  background-position: right;
+.card span {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #4f5665;
+}
+.card .star::after {
+  content: url(img/ant-design_star-filled.svg);
   margin-right: 30px;
-  flex: 1 0 auto;
+  padding: 10px;
 }
 .card p {
   height: 100px;
@@ -359,38 +365,41 @@ body {
   align-items: center;
 }
 .control .buttons {
-  width: 200px;
+  width: 140px;
+  display: flex;
+  justify-content: space-around;
 }
-.control button:nth-child(1) {
+.control button {
   width: 60px;
   height: 60px;
   cursor: pointer;
-  background: url(img/left.svg) no-repeat;
-}
-.control button:nth-child(2) {
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  background: url(img/right.svg) no-repeat;
+  border: #f53838 1px solid;
+  border-radius: 50px;
+  background: #ffffff;
 }
 .subscribe {
-  margin-top: 80px;
+  width: 1000px;
+  margin-top: 50px;
+  margin-left: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 70px;
+  padding: 60px;
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
 }
-.subscribe h2{
+.subscribe h2 {
   font-weight: 500;
   font-size: 35px;
   line-height: 45px;
-  color: #0B132A;
+  color: #0b132a;
 }
-.subscribe p{
+.subscribe p {
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
-  color: #4F5665;
+  color: #4f5665;
 }
 .subscribe button {
   cursor: pointer;
@@ -399,4 +408,43 @@ body {
   background: #f53838;
   border-radius: 10px;
   color: #ffffff;
+}
+.footer {
+  margin-top: 200px;
+  padding: 0 320px;
+  display: flex;
+  justify-content: space-around;
+  height: 563px;
+  background: #f8f8f8;
+}
+.footer section {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  padding: 150px 0px;
+}
+.footer span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4f5665;
+}
+
+.footer ul {
+  margin-top: 150px;
+}
+.footer li {
+  list-style-type: none;
+  padding-bottom: 10px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4f5665;
+}
+.footer li:nth-child(1) {
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #0b132a;
 }
