@@ -5,14 +5,10 @@
 }
 html,
 body {
-  height: 100%;
-  width: 100%;
-  font-family: Rubik;
-  font-style: normal;
-}
-.container {
   width: 1207px;
   margin: 0 auto;
+  font-family: Rubik;
+  font-style: normal;
 }
 .header {
   margin-top: 20px;
@@ -30,19 +26,19 @@ body {
 .main-menu {
   flex-grow: 1;
 }
-.main-menu-list {
+.main-menu .main-menu__list {
   list-style: none;
   display: flex;
   justify-content: space-around;
   padding-top: 10px;
 }
-.main-menu-list a {
+.main-menu .main-menu__list a {
   color: #4f5665;
   font-size: 16px;
   line-height: 19px;
   text-decoration: none;
 }
-.login button {
+.header__login .header__button {
   cursor: pointer;
   font-weight: bold;
   font-size: 12px;
@@ -58,25 +54,25 @@ body {
   margin-top: 100px;
   display: flex;
 }
-.about-info {
+.about__info {
   width: 555px;
   height: 220px;
   flex: 1 0 auto;
 }
-.about-info h1 {
+.about__info h1 {
   font-weight: 500;
   font-size: 50px;
   line-height: 70px;
   color: #0b132a;
 }
-.about-info p {
+.about__info p {
   line-height: 30px;
   padding: 20px 0;
   font-weight: normal;
   font-size: 16px;
   color: #4f5665;
 }
-.about-info button {
+.about__info button {
   width: 250px;
   height: 60px;
   cursor: pointer;
@@ -84,7 +80,7 @@ body {
   border-radius: 10px;
   color: #ffffff;
 }
-.about-img {
+.about__img {
   width: 611.24px;
   height: 382.44px;
 }
@@ -93,17 +89,18 @@ body {
   display: flex;
   justify-content: space-around;
 }
-.statistics-item {
+.statistics__item {
   display: flex;
 }
-.statistics-item p {
+.statistics__item p {
   padding-left: 10px;
   font-weight: bold;
   font-size: 25px;
   line-height: 30px;
   color: #0b132a;
 }
-.statistics-item span {
+.statistics__item span {
+  font-weight: normal;
   font-size: 20px;
   line-height: 30px;
   color: #4f5665;
@@ -112,36 +109,36 @@ body {
   margin-top: 100px;
   display: flex;
 }
-.features-img {
+.features__img {
   flex: 1 0 auto;
 }
-.features-info {
+.features__info {
   width: 427px;
   height: 365px;
 }
-.features-info h2 {
+.features__info h2 {
   font-weight: 500;
   font-size: 35px;
   line-height: 50px;
   color: #0b132a;
 }
-.features-info p {
+.features__info p {
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
   color: #4f5665;
   padding: 10px 0;
 }
-.features-info ul {
+.features__info .features__list {
   list-style: none;
   font-weight: normal;
   font-size: 14px;
   line-height: 30px;
   color: #4f5665;
 }
-.features-info li {
+.features__info .features__item {
   padding-left: 30px;
-  background-image: url(img/bx_bxs-check-circle.svg);
+  background-image: url(assets/svg/bx_bxs-check-circle.svg);
   background-repeat: no-repeat;
   background-position: left;
 }
@@ -151,7 +148,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-.tariffs .tariffs-heading {
+.tariffs .tariffs__head {
   width: 100%;
 }
 .tariffs h2 {
@@ -166,7 +163,11 @@ body {
   line-height: 30px;
   color: #4f5665;
 }
-.tariff {
+.tariffs-packages {
+  width: 100%;
+  display: flex;
+}
+.tariffs-packages__item {
   flex: 1 0 auto;
   margin-top: 50px;
   margin-left: 30px;
@@ -178,21 +179,21 @@ body {
   box-sizing: border-box;
   border-radius: 10px;
 }
-.tariff:hover {
+.tariffs-packages__item:hover {
   border-color: #f53838;
 }
-.tariff h3 {
+.tariffs-packages__package h3 {
   padding: 30px;
   font-weight: 500;
   font-size: 15px;
   line-height: 30px;
 }
-.tariff ul {
+.tariffs-packages__item .tariffs-packages__list {
   list-style: none;
   width: 190.54px;
   height: 230px;
 }
-.tariff li {
+.tariffs-packages__item li{
   text-align: left;
   padding-left: 25px;
   font-size: 14px;
@@ -200,20 +201,20 @@ body {
   color: #4f5665;
   width: 181.17px;
   height: 30px;
-  background-image: url(img/mark.svg);
+  background-image: url(assets/svg/mark.svg);
   background-repeat: no-repeat;
   background-position: left;
 }
-.tariff p {
+.tariffs-packages__item .tariffs-packages__price {
   font-weight: 500;
   font-size: 25px;
   line-height: 30px;
   color: #0b132a;
 }
-.tariff span {
+.tariffs-packages__item span {
   color: #4f5665;
 }
-.tariff button {
+.tariffs-packages__item .tariffs-packages__button {
   margin-top: 20px;
   width: 177.88px;
   height: 45px;
@@ -223,14 +224,14 @@ body {
   border-radius: 50px;
   color: #f53838;
 }
-.tariff button:hover {
+.tariffs-packages__item .tariffs-packages__button:hover {
   background: #f53838;
   color: #ffffff;
 }
 .map {
   text-align: center;
 }
-.map .map-heading {
+.map .map__head {
   margin-top: 150px;
   margin-bottom: 155px;
 }
@@ -253,16 +254,16 @@ body {
 .stories {
   text-align: center;
 }
-.stories .stories-heading {
+.stories .stories__head {
   margin-top: 50px;
 }
-.stories h2 {
+.stories__head h2 {
   font-weight: 500;
   font-size: 35px;
   line-height: 50px;
   color: #0b132a;
 }
-.stories p {
+.stories__head p {
   margin-top: 20px;
   font-weight: normal;
   font-size: 16px;
@@ -275,15 +276,15 @@ body {
 .slider input {
   display: none;
 }
-.overflow {
+.slider-overflow {
   width: 1207px;
   margin: 0 auto;
   overflow: hidden;
 }
-.slides {
+.slider-slides {
   display: inline-flex;
 }
-.card {
+.slider__card {
   width: 400px;
   height: 230px;
   border: 2px solid #dddddd;
@@ -294,12 +295,12 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-.card img {
+.slider__card img {
   width: 50px;
   height: 50px;
   padding: 30px 30px 0px 30px;
 }
-.card h5 {
+.slider__card h5 {
   text-align: left;
   font-weight: 500;
   font-size: 18px;
@@ -308,18 +309,18 @@ body {
   flex: 1 0 auto;
   align-self: flex-end;
 }
-.card span {
+.slider__card span {
   font-weight: normal;
   font-size: 14px;
   line-height: 30px;
   color: #4f5665;
 }
-.card .star::after {
-  content: url(img/ant-design_star-filled.svg);
+.slider__card .slider__star::after {
+  content: url(assets/svg/ant-design_star-filled.svg);
   margin-right: 30px;
   padding: 10px;
 }
-.card p {
+.slider__card p {
   height: 100px;
   text-align: left;
   font-weight: normal;
@@ -328,48 +329,49 @@ body {
   color: #0b132a;
   padding: 0px 30px 30px 30px;
 }
-#switch1:checked ~ .overflow .card {
+#switch1:checked ~ .slider-overflow .slider__card {
   transform: translate(-50px);
   transition: 2s;
 }
-#switch2:checked ~ .overflow .card {
+#switch2:checked ~ .slider-overflow .slider__card {
   transform: translate(-200px);
   transition: 2s;
 }
-#switch3:checked ~ .overflow .card {
+#switch3:checked ~ .slider-overflow .slider__card {
   transform: translate(-400px);
   transition: 2s;
 }
-#switch4:checked ~ .overflow .card {
+#switch4:checked ~ .slider-overflow .slider__card {
   transform: translate(-600px);
   transition: 2s;
 }
-.control label {
-  cursor: pointer;
-  width: 10px;
-  height: 10px;
-  background: #dde0e4;
-  border-radius: 5px;
-  display: inline-block;
-}
-#switch1:checked ~ .control label:nth-child(1),
-#switch2:checked ~ .control label:nth-child(2),
-#switch3:checked ~ .control label:nth-child(3),
-#switch4:checked ~ .control label:nth-child(4) {
-  background: #f53838;
-}
-.control {
+.slider__controls {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.control .buttons {
+.slider__controls label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  background: #dde0e4;
+  border-radius: 10px;
+  display: inline-block;
+}
+#switch1:checked ~ .slider__controls label:nth-child(1),
+#switch2:checked ~ .slider__controls label:nth-child(2),
+#switch3:checked ~ .slider__controls label:nth-child(3),
+#switch4:checked ~ .slider__controls label:nth-child(4) {
+  background: #f53838;
+}
+.slider__controls .controls__buttons {
   width: 140px;
   display: flex;
   justify-content: space-around;
 }
-.control button {
+.slider__controls button {
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -389,19 +391,19 @@ body {
   border-radius: 10px;
   position: absolute;
 }
-.subscribe h2 {
+.subscribe__head h2 {
   font-weight: 500;
   font-size: 35px;
   line-height: 45px;
   color: #0b132a;
 }
-.subscribe p {
+.subscribe__head p {
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
   color: #4f5665;
 }
-.subscribe button {
+.subscribe .subscribe__button{
   cursor: pointer;
   width: 250px;
   height: 60px;
@@ -410,30 +412,29 @@ body {
   color: #ffffff;
 }
 .footer {
-  margin-top: 200px;
+  margin: 200px -345px 0 -345px;
   padding: 0 320px;
   display: flex;
   justify-content: space-around;
   height: 563px;
   background: #f8f8f8;
 }
-.footer section {
+.footer .footer__content {
   display: flex;
   justify-content: space-between;
   flex-flow: column nowrap;
   padding: 150px 0px;
 }
-.footer span {
+.footer__content span {
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
   color: #4f5665;
 }
-
-.footer ul {
+.footer .footer-list {
   margin-top: 150px;
 }
-.footer li {
+.footer .footer-list__item {
   list-style-type: none;
   padding-bottom: 10px;
   font-weight: normal;
@@ -441,7 +442,7 @@ body {
   line-height: 30px;
   color: #4f5665;
 }
-.footer li:nth-child(1) {
+.footer .footer-list__item:nth-child(1) {
   padding-bottom: 20px;
   font-weight: 500;
   font-size: 18px;
