@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,9 @@
             </ul>
         </nav>
         <div class="header__login">
-            <button class="header__button">Sing Up</button>
+            <button class="header__button">
+                Sing Up
+            </button>
         </div>
     </header>
 
@@ -217,7 +220,7 @@
             </div>
             <span>©2020LaslesVPN</span>
         </section>
-        <ul class="footer-list">
+        <ul class="footer-nav">
             <li class="footer-list__item">Product</li>
             <li class="footer-list__item">Download</li>
             <li class="footer-list__item">Pricing</li>
@@ -226,7 +229,7 @@
             <li class="footer-list__item">Countries</li>
             <li class="footer-list__item">Blog</li>
         </ul>
-        <ul class="footer-list">
+        <ul class="footer-nav">
             <li class="footer-list__item">Engage</li>
             <li class="footer-list__item">LaslesVPN</li>
             <li class="footer-list__item">FAQ</li>
@@ -235,12 +238,35 @@
             <li class="footer-list__item">Privacy Policy</li>
             <li class="footer-list__item">Terms of Service</li>
         </ul>
-        <ul class="footer-list">
+        <ul class="footer-nav">
             <li class="footer-list__item">Earn Money</li>
             <li class="footer-list__item">Affiliate</li>
             <li class="footer-list__item">Become Partner</li>
         </ul>
     </footer>
+
+    <div class="modal" id="auth">
+        <form method="post" class="login-form animate">
+            <div class="login-form__content">
+                <p><input class="login-form__input" type="text" name="login" value="" placeholder="Email" required></p>
+                <p><input class="login-form__input" type="password" name="password" value="" placeholder="Password" required></p>
+                <p class="login-form__remember_me">
+                    <label for="remember_me">Remember me</label>
+                    <input type="checkbox" name="remember_me" id="remember_me">
+                </p>
+            </div>
+
+            <div class="login-form__buttons">
+                <button type="submit" class="login-form__submit">
+                    Log in
+                </button>
+                <button type="button" class="login-form__cancel">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    
 </body>
 
 </html>

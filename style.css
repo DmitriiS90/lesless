@@ -193,7 +193,7 @@ body {
   width: 190.54px;
   height: 230px;
 }
-.tariffs-packages__item li{
+.tariffs-packages__item li {
   text-align: left;
   padding-left: 25px;
   font-size: 14px;
@@ -403,7 +403,7 @@ body {
   line-height: 30px;
   color: #4f5665;
 }
-.subscribe .subscribe__button{
+.subscribe .subscribe__button {
   cursor: pointer;
   width: 250px;
   height: 60px;
@@ -431,7 +431,7 @@ body {
   line-height: 30px;
   color: #4f5665;
 }
-.footer .footer-list {
+.footer .footer-nav {
   margin-top: 150px;
 }
 .footer .footer-list__item {
@@ -448,4 +448,62 @@ body {
   font-size: 18px;
   line-height: 30px;
   color: #0b132a;
+}
+/* modal form */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+.login-form {
+  background-color: #fefefe;
+  margin: 5px auto;
+  margin-top: 100px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 30%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.login-form__content {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.login-form__content p {
+  margin: 40px;
+}
+.login-form__content .login-form__input {
+  width: 100%;
+  padding: 10px;
+}
+.login-form__remember_me{
+  display: flex;
+}
+.login-form__buttons {
+  text-align: center;
+}
+.login-form__buttons button {
+  background-color: #4caf50; 
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.animate {
+  animation: animatezoom 0.5s
+}
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
 }
