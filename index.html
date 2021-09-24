@@ -28,7 +28,7 @@
             </ul>
         </nav>
         <div class="header__login">
-            <button class="header__button">
+            <button class="header__button" id="singUpButton">
                 Sing Up
             </button>
         </div>
@@ -43,7 +43,7 @@
                 <button>Get Started</button>
             </div>
             <div class="about__img">
-                <img src="assets/img/Illustration_1.png" alt="img">
+                <img src="assets/img/Illustration_1.png" alt="Illustration_1">
             </div>
         </section>
 
@@ -64,7 +64,7 @@
 
         <section class="features">
             <div class="features__img">
-                <img src="assets/img/Illustration_2.png" alt="img">
+                <img src="assets/img/Illustration_2.png" alt="Illustration_2">
             </div>
             <div class="features__info">
                 <h2>We Provide Many Features You Can Use</h2>
@@ -85,7 +85,7 @@
             </div>
             <div class="tariffs-packages">
                 <div class="tariffs-packages__item">
-                    <img src="assets/img/free.png" alt="img">
+                    <img src="assets/img/free.png" alt="free package Illustration">
                     <h3>Free Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
@@ -97,7 +97,7 @@
                     <button class="tariffs-packages__button">Select</button>
                 </div>
                 <div class="tariffs-packages__item">
-                    <img src="assets/img/standard.png" alt="img">
+                    <img src="assets/img/standard.png" alt="standard package Illustration">
                     <h3>Standard Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
@@ -110,7 +110,7 @@
                     <button class="tariffs-packages__button">Select</button>
                 </div>
                 <div class="tariffs-packages__item">
-                    <img src="assets/img/premium.png" alt="img">
+                    <img src="assets/img/premium.png" alt="premium package Illustration">
                     <h3>Premium Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
@@ -131,8 +131,8 @@
                 <h2>Huge Global Network <br> of Fast VPN</h2>
                 <p>See <span>LaslesVPN</span> everywhere to make it easier for you when you move <br> locations.</p>
             </div>
-            <img src="assets/img/huge_Global_1.png" alt="img">
-            <img src="assets/img/huge_Global_2.png" alt="img">
+            <img src="assets/img/huge_Global_1.png" alt="map global">
+            <img src="assets/img/huge_Global_2.png" alt="company global">
         </section>
 
         <section class="stories">
@@ -150,7 +150,7 @@
                 <div class="slider-overflow">
                     <div class="slider-slides">
                         <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_1.svg" alt="img">
+                            <img src="assets/svg/ellipse_175_1.svg" alt="slide Viezh Robert">
                             <h5>Viezh Robert <br> <span>Warsaw, Poland</span></h5>
                             <div class="slider__star">4.5</div>
                             <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations
@@ -158,21 +158,21 @@
                         </div>
 
                         <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_3.svg" alt="img">
+                            <img src="assets/svg/ellipse_175_3.svg" alt="slide Yessica Christy">
                             <h5>Yessica Christy <br> <span>Shanxi, China</span></h5>
                             <div class="slider__star">4.5</div>
                             <p>“I like it because I like to travel far and still can connect with high speed.”.</p>
                         </div>
 
                         <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_2.svg" alt="img">
+                            <img src="assets/svg/ellipse_175_2.svg" alt="slide Kim Young Jou">
                             <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
                             <div class="slider__star">4.5</div>
                             <p>“This is very unusual for my business that currently requires a virtual private network
                                 that has high security.”.</p>
                         </div>
                         <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_3.svg" alt="img">
+                            <img src="assets/svg/ellipse_175_3.svg" alt="slide Kim Young Jou">
                             <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
                             <div class="slider__star">4.5</div>
                             <p>“This is very unusual for my business that currently requires a virtual private network
@@ -189,8 +189,8 @@
                         <label for="switch4"></label>
                     </div>
                     <div class="controls__buttons">
-                        <button><img src="assets/svg/left.svg"></button>
-                        <button><img src="assets/svg/right.svg"></button>
+                        <button><img src="assets/svg/left.svg" alt="left"></button>
+                        <button><img src="assets/svg/right.svg" alt="right"></button>
                     </div>
                 </div>
 
@@ -207,19 +207,19 @@
     </main>
 
     <footer class="footer">
-        <article class="footer__content">
+        <div class="footer__content">
             <div class="logo">
                 <img src="assets/svg/vector.svg" width="35" height="36" alt="logo">
                 <p>LaslesVPN</p>
             </div>
             <span>LaslesVPN is a private virtual network that <br> has unique features and has high security.</span>
             <div class="footer__images">
-                <img src="assets/svg/facebook.svg" alt="img">
-                <img src="assets/svg/twitter.svg" alt="img">
-                <img src="assets/svg/instagram.svg" alt="img">
+                <img src="assets/svg/facebook.svg" alt="facebook">
+                <img src="assets/svg/twitter.svg" alt="twitter">
+                <img src="assets/svg/instagram.svg" alt="instagram">
             </div>
             <span>©2020LaslesVPN</span>
-        </article>
+        </div>
         <ul class="footer-nav">
             <li class="footer-list__item">Product</li>
             <li class="footer-list__item">Download</li>
@@ -246,7 +246,7 @@
     </footer>
 
     <div class="modal" id="modal">
-        <form method="post" class="login-form animate" id="auth">
+        <form action="/" method="POST" class="login-form animate" id="auth">
             <div class="login-form__content">
                 <p><input class="login-form__input" type="text" name="login" value="" placeholder="Email" required></p>
                 <p><input class="login-form__input" type="password" name="password" value="" placeholder="Password" required></p>
@@ -257,10 +257,10 @@
             </div>
 
             <div class="login-form__buttons">
-                <button type="submit" class="login-form__submit">
+                <button type="button" class="login-form__submit" id="submit">
                     Log in
                 </button>
-                <button type="button" class="login-form__cancel">
+                <button type="button" class="login-form__cancelButton" id="cancelButton">
                     Cancel
                 </button>
             </div>
