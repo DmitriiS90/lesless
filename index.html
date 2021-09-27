@@ -20,52 +20,53 @@
         </div>
         <nav class="main-menu">
             <ul class="main-menu__list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Help</a></li>
+                <li class="main-menu__list-link">
+                    <a href="#">About</a>
+                </li>
+                <li class="main-menu__list-link">
+                    <a href="#">Features</a>
+                </li>
+                <li class="main-menu__list-link">
+                    <a href="#">Pricing</a>
+                </li>
+                <li class="main-menu__list-link">
+                    <a href="#">Testimonials</a>
+                </li>
+                <li class="main-menu__list-link">
+                    <a href="#">Help</a>
+                </li>
             </ul>
         </nav>
-        <div class="header__login">
-            <button class="header__button" id="singUpButton">
-                Sing Up
-            </button>
-        </div>
+        <button class="header__button" id="singUpButton">
+            Sing Up
+        </button>
     </header>
-
     <main class="main">
         <section class="about">
             <div class="about__info">
-                <h1>Want anything to be <br> easy with LaslesVPN.</h1>
-                <p>Provide a network for all your needs with ease and fun using LaslesVPN <br> discover interesting
+                <h1>Want anything to be easy with LaslesVPN.</h1>
+                <p>Provide a network for all your needs with ease and fun using LaslesVPN discover interesting
                     features from us.</p>
                 <button>Get Started</button>
             </div>
-            <div class="about__img">
-                <img src="assets/img/Illustration_1.png" alt="Illustration_1">
+            <img class="about__img" src="assets/img/Illustration_1.png" alt="Illustration_1">
+        </section>
+        <section class="statistics">
+            <div class="statistics__item">
+                <img src="assets/svg/user.svg" alt="user">
+                <p>90+ <span>Users</span></p>
+            </div>
+            <div class="statistics__item">
+                <img src="assets/svg/location.svg" alt="location">
+                <p>30+ <span>Locations</span></p>
+            </div>
+            <div class="statistics__item">
+                <img src="assets/svg/server.svg" alt="server">
+                <p>50+ <span>Servers</span></p>
             </div>
         </section>
-
-        <article class="statistics">
-            <div class="statistics__item">
-                <img src="assets/svg/user.svg" alt="img">
-                <p>90+ <br> <span>Users</span></p>
-            </div>
-            <div class="statistics__item">
-                <img src="assets/svg/location.svg" alt="img">
-                <p>30+ <br> <span>Locations</span></p>
-            </div>
-            <div class="statistics__item">
-                <img src="assets/svg/server.svg" alt="img">
-                <p>50+ <br> <span>Servers</span></p>
-            </div>
-        </article>
-
         <section class="features">
-            <div class="features__img">
-                <img src="assets/img/Illustration_2.png" alt="Illustration_2">
-            </div>
+            <img class="features__img" src="assets/img/Illustration_2.png" alt="Illustration_2">
             <div class="features__info">
                 <h2>We Provide Many Features You Can Use</h2>
                 <p>You can explore the features that we provide with fun and have their own functions each feature.</p>
@@ -77,7 +78,6 @@
                 </ul>
             </div>
         </section>
-
         <section class="tariffs">
             <div class="tariffs__head">
                 <h2>Choose Your Plan</h2>
@@ -125,94 +125,87 @@
                 </div>
             </div>
         </section>
-
         <section class="map">
             <div class="map__head">
-                <h2>Huge Global Network <br> of Fast VPN</h2>
-                <p>See <span>LaslesVPN</span> everywhere to make it easier for you when you move <br> locations.</p>
+                <h2>Huge Global Network of Fast VPN</h2>
+                <p>See <span>LaslesVPN</span> everywhere to make it easier for you when you move locations.</p>
             </div>
             <img src="assets/img/huge_Global_1.png" alt="map global">
             <img src="assets/img/huge_Global_2.png" alt="company global">
         </section>
-
         <section class="stories">
             <div class="stories__head">
-                <h2>Trusted by Thousands of <br> Happy Customer</h2>
-                <p>These are the stories of our customers who have joined us with great <br> pleasure when using this
+                <h2>Trusted by Thousands of Happy Customer</h2>
+                <p>These are the stories of our customers who have joined us with great pleasure when using this
                     crazy feature.</p>
             </div>
-            <div class="slider">
-                <input checked type="radio" name="slider" id="switch1">
-                <input type="radio" name="slider" id="switch2">
-                <input type="radio" name="slider" id="switch3">
-                <input type="radio" name="slider" id="switch4">
-
-                <div class="slider-overflow">
-                    <div class="slider-slides">
-                        <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_1.svg" alt="slide Viezh Robert">
-                            <h5>Viezh Robert <br> <span>Warsaw, Poland</span></h5>
-                            <div class="slider__star">4.5</div>
-                            <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations
-                                and so far there have been no problems. LaslesVPN always the best”.</p>
-                        </div>
-
-                        <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_3.svg" alt="slide Yessica Christy">
-                            <h5>Yessica Christy <br> <span>Shanxi, China</span></h5>
-                            <div class="slider__star">4.5</div>
-                            <p>“I like it because I like to travel far and still can connect with high speed.”.</p>
-                        </div>
-
-                        <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_2.svg" alt="slide Kim Young Jou">
-                            <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
-                            <div class="slider__star">4.5</div>
-                            <p>“This is very unusual for my business that currently requires a virtual private network
-                                that has high security.”.</p>
-                        </div>
-                        <div class="slider__card">
-                            <img src="assets/svg/ellipse_175_3.svg" alt="slide Kim Young Jou">
-                            <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
-                            <div class="slider__star">4.5</div>
-                            <p>“This is very unusual for my business that currently requires a virtual private network
-                                that has high security.”.</p>
-                        </div>
+            <div class="slider-wrapper">
+                <input checked type="radio" name="slider" id="robert">
+                <input type="radio" name="slider" id="christy">
+                <input type="radio" name="slider" id="kim">
+                <input type="radio" name="slider" id="jou">
+                <div class="slider">
+                    <div class="slider__card">
+                        <img src="assets/svg/ellipse_175_1.svg" alt="slide Viezh Robert">
+                        <h5>Viezh Robert <br> <span>Warsaw, Poland</span></h5>
+                        <div class="slider__star">4.5</div>
+                        <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations
+                            and so far there have been no problems. LaslesVPN always the best”.</p>
+                    </div>
+                    <div class="slider__card">
+                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Yessica Christy">
+                        <h5>Yessica Christy <br> <span>Shanxi, China</span></h5>
+                        <div class="slider__star">4.5</div>
+                        <p>“I like it because I like to travel far and still can connect with high speed.”.</p>
+                    </div>
+                    <div class="slider__card">
+                        <img src="assets/svg/ellipse_175_2.svg" alt="slide Kim Young Jou">
+                        <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
+                        <div class="slider__star">4.5</div>
+                        <p>“This is very unusual for my business that currently requires a virtual private network
+                            that has high security.”.</p>
+                    </div>
+                    <div class="slider__card">
+                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Kim Young Jou">
+                        <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
+                        <div class="slider__star">4.5</div>
+                        <p>“This is very unusual for my business that currently requires a virtual private network
+                            that has high security.”.</p>
                     </div>
                 </div>
-
                 <div class="slider__controls">
                     <div class="controls__switches">
-                        <label for="switch1"></label>
-                        <label for="switch2"></label>
-                        <label for="switch3"></label>
-                        <label for="switch4"></label>
+                        <label for="robert"></label>
+                        <label for="christy"></label>
+                        <label for="kim"></label>
+                        <label for="jou"></label>
                     </div>
                     <div class="controls__buttons">
-                        <button><img src="assets/svg/left.svg" alt="left"></button>
-                        <button><img src="assets/svg/right.svg" alt="right"></button>
+                        <button>
+                            <img src="assets/svg/left.svg" alt="left">
+                        </button>
+                        <button>
+                            <img src="assets/svg/right.svg" alt="right">
+                        </button>
                     </div>
                 </div>
-
             </div>
         </section>
-
         <section class="subscribe">
             <div class="subscribe__head">
-                <h2>Subscribe Now for <br> Get Special Features!</h2>
+                <h2>Subscribe Now for Get Special Features!</h2>
                 <p>Let's subscribe with us and find the fun.</p>
             </div>
             <button class="subscribe__button">Subscribe Now</button>
         </section>
     </main>
-
     <footer class="footer">
         <div class="footer__content">
             <div class="logo">
                 <img src="assets/svg/vector.svg" width="35" height="36" alt="logo">
                 <p>LaslesVPN</p>
             </div>
-            <span>LaslesVPN is a private virtual network that <br> has unique features and has high security.</span>
+            <span>LaslesVPN is a private virtual network that has unique features and has high security.</span>
             <div class="footer__images">
                 <img src="assets/svg/facebook.svg" alt="facebook">
                 <img src="assets/svg/twitter.svg" alt="twitter">
@@ -244,18 +237,17 @@
             <li class="footer-list__item">Become Partner</li>
         </ul>
     </footer>
-
     <div class="modal" id="modal">
         <form action="/" method="POST" class="login-form animate" id="auth">
             <div class="login-form__content">
-                <p><input class="login-form__input" type="text" name="login" value="" placeholder="Email" required></p>
-                <p><input class="login-form__input" type="password" name="password" value="" placeholder="Password" required></p>
-                <p class="login-form__remember_me">
+                <input class="login-form__input" type="text" name="login" value="" placeholder="Email" required>
+                <input class="login-form__input" type="password" name="password" value="" placeholder="Password"
+                    required>
+                <div class="login-form__remember_me">
                     <label for="remember_me">Remember me</label>
                     <input type="checkbox" name="remember_me" id="remember_me">
-                </p>
+                </div>
             </div>
-
             <div class="login-form__buttons">
                 <button type="button" class="login-form__submit" id="submit">
                     Log in
@@ -266,7 +258,6 @@
             </div>
         </form>
     </div>
-    
 </body>
 
 </html>

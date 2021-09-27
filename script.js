@@ -22,6 +22,19 @@ class SingUpForm {
         const submitButton = document.getElementById('submit')
         submitButton.addEventListener('click', this.submitSingUpForm);
 
+        const user = JSON.parse(localStorage.getItem('auth'))
+
+        if (user.login) {
+            singUpButton.disabled = true
+            singUpButton.style.borderColor = "#A9A9A9"
+            singUpButton.style.color = "#A9A9A9"
+            singUpButton.style.cursor = "default"
+
+            // const userLogin = document.createElement('p')
+            // userLogin.innerHTML = user.login
+            // document.querySelector(".header__login").append(userLogin)
+        }
+
     }
 
     submitSingUpForm() {
@@ -30,11 +43,7 @@ class SingUpForm {
 
         localStorage.setItem('auth', JSON.stringify(values))
         
-        console.log(JSON.parse);
-
+        window.location.replace('http://127.0.0.1:5500/');
     }
 }
 const singUpForm = new SingUpForm();
-
-
-
