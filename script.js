@@ -1,122 +1,149 @@
 window.onload = function () {
-    singUpForm.getSingUpForm()
-}
+    const handleModalShow = (isVisible = false) => {
+        const modal = document.getElementById('modal');
 
-class SingUpForm {
-    constructor(login, password) {
-        this.login = login
-        this.password = password
+        modal.classList.toggle('hide', isVisible);
     }
 
-    getSingUpForm() {
-        const singUpButton = document.getElementById('singUpButton')
-        singUpButton.addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'block'
+    const initialButtons = () => {
+        const buttonIdList = [
+            'singUpButton',
+            'startButton',
+            'selectFreeButton',
+            'selectStandardButton',
+            'selectPremiumButton',
+            'subscribeButton',
+        ];
+
+        buttonIdList.forEach((buttonId) => {
+            const button = document.getElementById(buttonId);
+
+            if (button) {
+                button.addEventListener('click', () => handleModalShow());
+            }
         })
+    };
 
-        const cancelButton = document.getElementById('cancelButton')
-        cancelButton.addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'none'
-        })
-
-        const startButton = document.getElementById('startButton')
-        startButton.addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'block'
-        })
-
-        const selectFreeButton = document.getElementById('selectFreeButton')
-        selectFreeButton.addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'block'
-        })
-        const selectStandardButton = document.getElementById('selectStandardButton')
-        selectStandardButton.addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'block'
-        })
-        const selectPremiumButton = document.getElementById('selectPremiumButton')
-        selectPremiumButton.addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'block'
-        })
-
-        const subscribeButton = document.getElementById('subscribeButton')
-        subscribeButton.addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'block'
-        })
-
-        const submitButton = document.getElementById('submit')
-        submitButton.addEventListener('click', this.submitSingUpForm);
-
-        const user = JSON.parse(localStorage.getItem('auth'))
-
-        if (user) {
-            singUpButton.disabled = true
-            singUpButton.style.borderColor = "#A9A9A9"
-            singUpButton.style.color = "#A9A9A9"
-            singUpButton.style.cursor = "default"
-
-            // const userLogin = document.createElement('p')
-            // userLogin.innerHTML = user.login
-            // document.querySelector(".header__login").append(userLogin)
+    class SingUpForm {
+        constructor(login, password) {
+            this.login = login
+            this.password = password
         }
 
-    }
+        initial() {
+            const cancelButton = document.getElementById('cancelButton')
+            cancelButton.addEventListener('click', () => handleModalShow(true))
 
-    static successSubmit(formValues) {
-        localStorage.setItem('auth', JSON.stringify(formValues))
-        window.location.replace('http://127.0.0.1:5500/');
-    }
+            const submitButton = document.getElementById('submit')
+            submitButton.addEventListener('click', this.submit);
 
-    submitSingUpForm() {
-        const formData = new FormData(document.forms.auth);
-        const formValues = Object.fromEntries(formData.entries());
-        const isValidate = ValidateSingUpForm.validate(formValues);
-
-        if (isValidate) {
-            SingUpForm.successSubmit(formValues);
-            return;
-        };
-
-        return;
-    }
-}
-class ValidateSingUpForm {
-    static validate(formValues) {
-        const errors = ValidateSingUpForm.getErrors(formValues);
-
-        if (!!errors.length) {
-            ValidateSingUpForm.setError(errors);
-            return;
+            this.checkCurrentUser()
         }
 
-        return true;
+        checkCurrentUser() {
+            const user = JSON.parse(localStorage.getItem('auth'))
+
+            if (user) {
+                singUpButton.disabled = true
+                singUpButton.style.borderColor = "#A9A9A9"
+                singUpButton.style.color = "#A9A9A9"
+                singUpButton.style.cursor = "default"
+
+                // const userLogin = document.createElement('p')
+                // userLogin.innerHTML = user.login
+                // document.querySelector(".header__login").append(userLogin)
+            }
+        }
+
+        static successSubmit(formValues) {
+            localStorage.setItem('auth', JSON.stringify(formValues))
+            window.location.replace('http://127.0.0.1:5500/');
+        }
+
+        submit() {
+            const formData = new FormData(document.forms.auth);
+            const formValues = Object.fromEntries(formData.entries());
+            const isValidate = Validator.validate(formValues);
+
+            if (isValidate) {
+                SingUpForm.successSubmit(formValues);
+                return;
+            };
+
+            return;
+        }
     }
+    class Validator {
+        static validate(formValues) {
+            const errors = Validator.getErrors(formValues);
+            //console.log(errors)
 
-    static getErrors(formValues) {
-        const data = Object.entries(formValues);
-        const validateData = data.reduce((result, [key, value]) => {
-
-            if (ValidateSingUpForm.validateEmpty(value)) {
-                return [...result, [[key], ['Поле не должно быть пустым']]]
+            if (!!errors.length) {
+                Validator.setError(errors);
+                return;
             }
 
-            return result;
-        }, [])
-        return validateData;
+            return true;
+        }
+
+        static getErrors(formValues) {
+            const data = Object.entries(formValues);
+            const validateData = data.reduce((result, [key, value]) => {
+
+                if (Validator.validateEmpty(value)) {
+                    return [...result, [[key], ['Поле не должно быть пустым']]]
+                }
+
+                if (key === 'password' && Validator.validatePassword(value)) {
+                    return [...result, [[key], ['Пароль должен...']]]
+                }
+
+                if (key === 'login' && Validator.validatePassword(value)) {
+                    return [...result, [[key], ['login должен...']]]
+                }
+
+                return result;
+            }, [])
+            console.log(validateData)
+            return validateData;
+        }
+
+        static validatePassword() {
+            const targetElement = document.querySelector(`input[name=password]`);
+            const pswLength = /[\w]{6,12}$/;
+
+            if (!targetElement.value.match(pswLength)) {
+                targetElement.insertAdjacentText('afterend', 'Пароль слишком короткий');
+            }
+            
+        }
+        static validateLogin() {
+            const targetElement = document.querySelector(`input[name=login]`);
+            const email = /^[a-zA-Z0-9_-]{3,16}$/;
+            
+            if (!targetElement.value.match(email)) {
+                targetElement.insertAdjacentText('afterend', 'Неправельный логин');
+            }
+
+        }
+
+        static setError(errors) {
+            const [[field, errorMessage]] = errors;
+
+            const errorTextElement = `<span>${errorMessage}</span>`;
+            const targetElement = document.querySelector(`input[name=${field}]`);
+            targetElement.style.border = '#FF0000 1px solid'
+            targetElement.insertAdjacentHTML('afterend', errorTextElement);
+        }
+
+        static validateEmpty(value) {
+            return !value.length;
+        }
     }
 
-    static setError(errors) {
-        const [[field, errorMessage]] = errors;
+    initialButtons();
 
-        const errorTextElement = `<span>${errorMessage}</span>`;
-        const targetElement = document.querySelector(`input[name=${field}]`);
-        targetElement.style.border = '#FF0000 1px solid'
-        targetElement.insertAdjacentHTML('afterend', errorTextElement);
+    const singUpForm = new SingUpForm();
 
-    }
-
-    static validateEmpty(value) {
-        return !value.length;
-    }
-
+    singUpForm.initial();
 }
-
-const singUpForm = new SingUpForm();
