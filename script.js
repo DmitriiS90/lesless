@@ -76,7 +76,6 @@ window.onload = function () {
     class Validator {
         static validate(formValues) {
             const errors = Validator.getErrors(formValues);
-            //console.log(errors)
 
             if (!!errors.length) {
                 Validator.setError(errors);
@@ -91,49 +90,72 @@ window.onload = function () {
             const validateData = data.reduce((result, [key, value]) => {
 
                 if (Validator.validateEmpty(value)) {
-                    return [...result, [[key], ['Поле не должно быть пустым']]]
+                    return [...result, [key, 'Поле не должно быть пустым']]
                 }
 
                 if (key === 'password' && Validator.validatePassword(value)) {
-                    return [...result, [[key], ['Пароль должен...']]]
+                    return [...result, [key, 'Пароль слишком короткий']]
                 }
 
-                if (key === 'login' && Validator.validatePassword(value)) {
-                    return [...result, [[key], ['login должен...']]]
+                if (key === 'login' && Validator.validateLogin(value)) {
+                    return [...result, [key, 'логин должен содержать...']]
                 }
 
                 return result;
             }, [])
-            console.log(validateData)
+            
             return validateData;
         }
 
-        static validatePassword() {
-            const targetElement = document.querySelector(`input[name=password]`);
+        static validatePassword(value) {
             const pswLength = /[\w]{6,12}$/;
 
-            if (!targetElement.value.match(pswLength)) {
-                targetElement.insertAdjacentText('afterend', 'Пароль слишком короткий');
+            if (value.match(pswLength) === null) {
+                return true;
             }
+
+            return false;
             
         }
-        static validateLogin() {
-            const targetElement = document.querySelector(`input[name=login]`);
-            const email = /^[a-zA-Z0-9_-]{3,16}$/;
+        static validateLogin(value) {
+            const login = /^[a-zA-Z0-9_-]{3,16}$/;
             
-            if (!targetElement.value.match(email)) {
-                targetElement.insertAdjacentText('afterend', 'Неправельный логин');
+            if (value.match(login) === null) {
+                return true;
             }
+
+            return false;
 
         }
 
         static setError(errors) {
+            if (!errors.length) {
+                return;
+            }
+
             const [[field, errorMessage]] = errors;
 
-            const errorTextElement = `<span>${errorMessage}</span>`;
-            const targetElement = document.querySelector(`input[name=${field}]`);
-            targetElement.style.border = '#FF0000 1px solid'
-            targetElement.insertAdjacentHTML('afterend', errorTextElement);
+            const targetField = document.querySelector(`input[name=${field}]`);
+            const errorTextElement = document.querySelector(`span[data-field="${field}"]`);
+
+            if (field && errorTextElement.innerHTML) {
+                return;
+            }
+
+            if (field) {
+                targetField.classList.toggle('error', true);
+                errorTextElement.insertAdjacentText('beforeEnd', errorMessage);
+            }
+        }
+
+        static clearValidation(){
+            if (field != 'login') {
+                const targetField = document.querySelector(`input[name='login']`);
+                targetField.classList.toggle('error', false);
+                document.querySelector(`#login-error`).remove();
+            }
+           
+           
         }
 
         static validateEmpty(value) {
