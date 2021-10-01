@@ -1,3 +1,5 @@
+import Validator from './utils/Validator.js';
+
 window.onload = function () {
     const handleModalShow = (isVisible = false) => {
         const modal = document.getElementById('modal');
@@ -45,143 +47,27 @@ window.onload = function () {
         static cancelButton = document.getElementById('cancelButton');
         static submitButton = document.getElementById('submit');
 
+        static inputs = document.querySelectorAll('input[name]');
+
         static init() {
-            this.cancelButton.addEventListener('click', () => handleModalShow(true))
-            this.submitButton.addEventListener('click', SingUpForm.submit);
-
-            this.inputLogin.addEventListener('blur', this.handleField);
-            this.inputPassword.addEventListener('blur', this.handleField);
+            this.setInputListeners();
         }
 
-        static successSubmit(formValues) {
-            localStorage.setItem('auth', JSON.stringify(formValues))
-            window.location.replace('http://127.0.0.1:5500/');
-        }
-
-        static handleField(event) {
-            if (Validator.isValid(event.target.name, event.target.value)) {
-                Validator.clearValidation(event)
-            }
+        static setInputListeners() {
+            this.inputs.forEach((input) => {
+                input.addEventListener('blur', (event) => Validator.validate(event.target));
+            });
         }
 
         static submit() {
-            const formData = new FormData(document.forms.auth);
+            const formData = new FormData(document.forms.singUp);
             const formValues = Object.fromEntries(formData.entries());
-            const isValidate = Validator.validate(formValues);
 
-            if (isValidate) {
-                SingUpForm.successSubmit(formValues);
-                return;
-            };
-
-            return;
+            localStorage.setItem('auth', JSON.stringify(formValues));
+            window.location.replace('http://127.0.0.1:5500/');
         }
     };
-    class Validator {
-        static errors = [];
-
-        static validate(formValues) {
-            this.errors = this.getErrors(formValues);
-
-            if (!!this.errors.length) {
-                this.setError(this.errors);
-                return;
-            }
-
-            return true;
-        }
-
-        static isValid(name, value) {
-            if (Validator.validateEmpty(value)) {
-                return false
-            }
-
-            if (name === 'password' && Validator.validatePassword(value)) {
-                return false
-            }
-
-            if (name === 'login' && Validator.validateLogin(value)) {
-                return false
-            }
-
-            return true;
-        }
-
-        static getErrors(formValues) {
-            const data = Object.entries(formValues);
-            const validateData = data.reduce((result, [key, value]) => {
-
-                if (Validator.validateEmpty(value)) {
-                    return [...result, [key, 'Поле не должно быть пустым']]
-                }
-
-                if (key === 'password' && Validator.validatePassword(value)) {
-                    return [...result, [key, 'Пароль слишком короткий']]
-                }
-
-                if (key === 'login' && Validator.validateLogin(value)) {
-                    return [...result, [key, 'логин должен содержать @']]
-                }
-                
-                return result;
-
-            }, [])
-
-            return validateData;
-        }
-
-        static validatePassword(value) {
-            const pswLength = /[\w]{6,12}$/;
-
-            if (value.match(pswLength) === null) {
-                return true;
-            }
-
-            return false;
-
-        }
-        static validateLogin(value) {
-            const login = /^[a-z0-9.]+@[a-z0-9]+(\.[a-z]+)+$/i;
-
-            if (value.match(login) === null) {
-                return true;
-            }
-
-            return false;
-
-        }
-
-        static setError(errors) {
-            if (!errors.length) {
-                return;
-            }
-
-            const [[field, errorMessage]] = errors;
-            const targetField = document.querySelector(`input[name=${field}]`);
-            const errorTextElement = document.querySelector(`span[data-field="${field}"]`);
-
-            if (field && errorTextElement.innerHTML) {
-                return;
-            }
-
-            if (field) {
-                targetField.classList.toggle('error', true);
-                errorTextElement.insertAdjacentText('beforeEnd', errorMessage);
-                targetField.dataset.error = 'true';
-            }
-        }
-
-        static clearValidation(event) {
-            const targetField = document.querySelector(`input[name='${event.target.name}']`);
-            targetField.classList.toggle('error', false);
-            document.querySelector(`span[data-field='${event.target.name}']`).remove();
-            delete event.target.dataset.error
-        }
-
-        static validateEmpty(value) {
-            return !value.length;
-        }
-    };
+    
 
     initialButtons();
 
