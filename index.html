@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lesless</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaslesVPN</title>
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js"></script>
+        rel="stylesheet" />
+    <script type="module" src="/js/index.js"></script>
 </head>
-
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="assets/svg/vector.svg" width="35" height="36" alt="logo">
-            <p>LaslesVPN</p>
-        </div>
+    <header class="container">
+        <img class="logo" src="assets/svg/logo.svg" alt="LaslesVPN Logo" />
         <nav class="main-menu">
             <ul class="main-menu__list">
                 <li class="main-menu__list-link">
-                    <a href="#">About</a>
+                    <a href="#about">About</a>
                 </li>
                 <li class="main-menu__list-link">
-                    <a href="#">Features</a>
+                    <a href="#features">Features</a>
                 </li>
                 <li class="main-menu__list-link">
-                    <a href="#">Pricing</a>
+                    <a href="#tariffs">Pricing</a>
                 </li>
                 <li class="main-menu__list-link">
-                    <a href="#">Testimonials</a>
+                    <a href="#stories">Testimonials</a>
                 </li>
                 <li class="main-menu__list-link">
-                    <a href="#">Help</a>
+                    <a href="#subscribe">Help</a>
                 </li>
             </ul>
         </nav>
-        <button class="header__button outline-button" id="singUpButton">
+        <button class="button--outline header__button" id="singUpButton">
             Sign Up
         </button>
     </header>
-    <main class="main">
-        <section class="about">
+    <main class="container">
+        <section class="about" id="about">
             <div class="about__info">
-                <h1>Want anything to be easy with LaslesVPN.</h1>
-                <p>Provide a network for all your needs with ease and fun using LaslesVPN discover interesting
-                    features from us.</p>
+                <h1 class="about__title title">Want anything to be easy with LaslesVPN.</h1>
+                <p class="about__text text">
+                    Provide a network for all your needs with ease and fun using
+                    LaslesVPN discover interesting features from us.
+                </p>
                 <button class="primary-button" id="startButton">Get Started</button>
             </div>
-            <img class="about__img" src="assets/img/Illustration_1.png" alt="Illustration_1">
+            <img class="about__img" src="assets/img/Illustration_1.png" alt="Illustration_1" />
         </section>
         <section class="statistics">
             <div class="statistics__item">
-                <img src="assets/svg/user.svg" alt="user">
-                <p>90+ <span>Users</span></p>
+                <img src="assets/svg/user.svg" alt="user" />
+                <p><span>90+</span> Users</p>
             </div>
             <div class="statistics__item">
-                <img src="assets/svg/location.svg" alt="location">
-                <p>30+ <span>Locations</span></p>
+                <img src="assets/svg/location.svg" alt="location" />
+                <p><span>30+</span> Locations</p>
             </div>
             <div class="statistics__item">
-                <img src="assets/svg/server.svg" alt="server">
-                <p>50+ <span>Servers</span></p>
+                <img src="assets/svg/server.svg" alt="server" />
+                <p><span>50+</span> Servers</p>
             </div>
         </section>
-        <section class="features">
-            <img class="features__img" src="assets/img/Illustration_2.png" alt="Illustration_2">
+        <section class="features" id="features">
+            <img class="features__img" src="assets/img/Illustration_2.png" alt="Illustration_2" />
             <div class="features__info">
-                <h2>We Provide Many Features You Can Use</h2>
-                <p>You can explore the features that we provide with fun and have their own functions each feature.</p>
+                <h2 class="features__title title">We Provide Many Features You Can Use</h2>
+                <p class="features__text text">
+                    You can explore the features that we provide with fun and have their
+                    own functions each feature.
+                </p>
                 <ul class="features__list">
                     <li class="features__item">Powerfull online protection.</li>
                     <li class="features__item">Internet without borders.</li>
@@ -78,14 +78,17 @@
                 </ul>
             </div>
         </section>
-        <section class="tariffs">
-            <div class="tariffs__head">
-                <h2>Choose Your Plan</h2>
-                <p>Let's choose the package that is best for you and explore it happily and cheerfully.</p>
+        <section class="tariffs" id="tariffs">
+            <div class="tariffs__header">
+                <h2 class="tariffs__title title">Choose Your Plan</h2>
+                <p class="tariffs__text text">
+                    Let's choose the package that is best for you and explore it happily
+                    and cheerfully.
+                </p>
             </div>
             <div class="tariffs-packages">
                 <div class="tariffs-packages__item">
-                    <img src="assets/img/free.png" alt="free package Illustration">
+                    <img src="assets/img/free.png" alt="free package Illustration" />
                     <h3>Free Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
@@ -94,10 +97,12 @@
                         <li>Works on All Devices</li>
                     </ul>
                     <p class="tariffs-packages__price">Free</p>
-                    <button class="tariffs-packages__button outline-button" id="selectFreeButton">Select</button>
+                    <button class="tariffs-packages__button button--outline" id="selectFreeButton">
+                        Select
+                    </button>
                 </div>
                 <div class="tariffs-packages__item">
-                    <img src="assets/img/standard.png" alt="standard package Illustration">
+                    <img src="assets/img/standard.png" alt="standard package Illustration" />
                     <h3>Standard Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
@@ -107,10 +112,12 @@
                         <li>Connect Anyware</li>
                     </ul>
                     <p class="tariffs-packages__price">$9 <span>/ mo</span></p>
-                    <button class="tariffs-packages__button outline-button" id="selectStandardButton">Select</button>
+                    <button class="tariffs-packages__button button--outline" id="selectStandardButton">
+                        Select
+                    </button>
                 </div>
                 <div class="tariffs-packages__item">
-                    <img src="assets/img/premium.png" alt="premium package Illustration">
+                    <img src="assets/img/premium.png" alt="premium package Illustration" />
                     <h3>Premium Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
@@ -121,56 +128,85 @@
                         <li>Get New Features</li>
                     </ul>
                     <p class="tariffs-packages__price">$12 <span>/ mo</span></p>
-                    <button class="tariffs-packages__button outline-button" id="selectPremiumButton">Select</button>
+                    <button class="tariffs-packages__button button--outline" id="selectPremiumButton">
+                        Select
+                    </button>
                 </div>
             </div>
         </section>
-        <section class="map">
-            <div class="map__head">
-                <h2>Huge Global Network of Fast VPN</h2>
-                <p>See <span>LaslesVPN</span> everywhere to make it easier for you when you move locations.</p>
+        <section class="map" id="map">
+            <div class="map__header">
+                <h2 class="map__title title">Huge Global Network of Fast VPN</h2>
+                <p class="map__text text">
+                    See <span>LaslesVPN</span> everywhere to make it easier for you when
+                    you move locations.
+                </p>
             </div>
-            <img src="assets/img/huge_Global_1.png" alt="map global">
-            <img src="assets/img/huge_Global_2.png" alt="company global">
+            <img src="assets/img/huge_Global_1.png" alt="map global" />
+            <img src="assets/img/huge_Global_2.png" alt="company global" />
         </section>
-        <section class="stories">
-            <div class="stories__head">
-                <h2>Trusted by Thousands of Happy Customer</h2>
-                <p>These are the stories of our customers who have joined us with great pleasure when using this
-                    crazy feature.</p>
+        <section class="stories" id="stories">
+            <div class="stories__header">
+                <h2 class="stories__title title">Trusted by Thousands of Happy Customer</h2>
+                <p class="stories__text text">
+                    These are the stories of our customers who have joined us with great
+                    pleasure when using this crazy feature.
+                </p>
             </div>
             <div class="slider-wrapper">
-                <input checked type="radio" name="slider" id="robert">
-                <input type="radio" name="slider" id="christy">
-                <input type="radio" name="slider" id="kim">
-                <input type="radio" name="slider" id="jou">
+                <input checked type="radio" name="slider" id="robert" />
+                <input type="radio" name="slider" id="christy" />
+                <input type="radio" name="slider" id="kim" />
+                <input type="radio" name="slider" id="jou" />
                 <div class="slider">
                     <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_1.svg" alt="slide Viezh Robert">
-                        <h5>Viezh Robert <br> <span>Warsaw, Poland</span></h5>
+                        <img src="assets/svg/ellipse_175_1.svg" alt="slide Viezh Robert" />
+                        <h5>
+                            Viezh Robert <br />
+                            <span>Warsaw, Poland</span>
+                        </h5>
                         <div class="slider__star">4.5</div>
-                        <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations
-                            and so far there have been no problems. LaslesVPN always the best”.</p>
+                        <p>
+                            “Wow... I am very happy to use this VPN, it turned out to be
+                            more than my expectations and so far there have been no
+                            problems. LaslesVPN always the best”.
+                        </p>
                     </div>
                     <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Yessica Christy">
-                        <h5>Yessica Christy <br> <span>Shanxi, China</span></h5>
+                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Yessica Christy" />
+                        <h5>
+                            Yessica Christy <br />
+                            <span>Shanxi, China</span>
+                        </h5>
                         <div class="slider__star">4.5</div>
-                        <p>“I like it because I like to travel far and still can connect with high speed.”.</p>
+                        <p>
+                            “I like it because I like to travel far and still can connect
+                            with high speed.”.
+                        </p>
                     </div>
                     <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_2.svg" alt="slide Kim Young Jou">
-                        <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
+                        <img src="assets/svg/ellipse_175_2.svg" alt="slide Kim Young Jou" />
+                        <h5>
+                            Kim Young Jou <br />
+                            <span>Seoul, South Korea</span>
+                        </h5>
                         <div class="slider__star">4.5</div>
-                        <p>“This is very unusual for my business that currently requires a virtual private network
-                            that has high security.”.</p>
+                        <p>
+                            “This is very unusual for my business that currently requires a
+                            virtual private network that has high security.”.
+                        </p>
                     </div>
                     <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Kim Young Jou">
-                        <h5>Kim Young Jou <br> <span>Seoul, South Korea</span></h5>
+                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Kim Young Jou" />
+                        <h5>
+                            Kim Young Jou <br />
+                            <span>Seoul, South Korea</span>
+                        </h5>
                         <div class="slider__star">4.5</div>
-                        <p>“This is very unusual for my business that currently requires a virtual private network
-                            that has high security.”.</p>
+                        <p>
+                            “This is very unusual for my business that currently requires a
+                            virtual private network that has high security.”.
+                        </p>
                     </div>
                 </div>
                 <div class="slider__controls">
@@ -182,73 +218,75 @@
                     </div>
                     <div class="controls__buttons">
                         <button>
-                            <img src="assets/svg/left.svg" alt="left">
+                            <img src="assets/svg/left.svg" alt="left" />
                         </button>
                         <button>
-                            <img src="assets/svg/right.svg" alt="right">
+                            <img src="assets/svg/right.svg" alt="right" />
                         </button>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="subscribe">
-            <div class="subscribe__head">
-                <h2>Subscribe Now for Get Special Features!</h2>
-                <p>Let's subscribe with us and find the fun.</p>
+        <section class="subscribe" id="subscribe">
+            <div class="subscribe__header">
+                <h2 class="subscribe__title title">Subscribe Now for Get Special Features!</h2>
+                <p class="subscribe__text text">Let's subscribe with us and find the fun.</p>
             </div>
-            <button class="primary-button" id="subscribeButton">Subscribe Now</button>
+            <button class="primary-button" id="subscribeButton">
+                Subscribe Now
+            </button>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="logo">
-                <img src="assets/svg/vector.svg" width="35" height="36" alt="logo">
-                <p>LaslesVPN</p>
+    <footer>
+        <div class="footer__info">
+            <img class="logo" src="assets/svg/logo.svg" alt="logo" />
+            <span>LaslesVPN is a private virtual network that has unique features and
+                has high security.</span>
+            <div class="footer__links">
+                <a href="#"><img src="assets/svg/facebook.svg" alt="facebook" /></a>
+                <a href="#"><img src="assets/svg/twitter.svg" alt="twitter" /></a>
+                <a href="#"><img src="assets/svg/instagram.svg" alt="instagram" /></a>
             </div>
-            <span>LaslesVPN is a private virtual network that has unique features and has high security.</span>
-            <div class="footer__images">
-                <img src="assets/svg/facebook.svg" alt="facebook">
-                <img src="assets/svg/twitter.svg" alt="twitter">
-                <img src="assets/svg/instagram.svg" alt="instagram">
-            </div>
-            <span>©2020LaslesVPN</span>
+            <span>&copy 2020 LaslesVPN</span>
         </div>
-        <ul class="footer-nav">
-            <li class="footer-list__item">Product</li>
-            <li class="footer-list__item">Download</li>
-            <li class="footer-list__item">Pricing</li>
-            <li class="footer-list__item">Locations</li>
-            <li class="footer-list__item">Server</li>
-            <li class="footer-list__item">Countries</li>
-            <li class="footer-list__item">Blog</li>
-        </ul>
-        <ul class="footer-nav">
-            <li class="footer-list__item">Engage</li>
-            <li class="footer-list__item">LaslesVPN</li>
-            <li class="footer-list__item">FAQ</li>
-            <li class="footer-list__item">Tutorials</li>
-            <li class="footer-list__item">About Us</li>
-            <li class="footer-list__item">Privacy Policy</li>
-            <li class="footer-list__item">Terms of Service</li>
-        </ul>
-        <ul class="footer-nav">
-            <li class="footer-list__item">Earn Money</li>
-            <li class="footer-list__item">Affiliate</li>
-            <li class="footer-list__item">Become Partner</li>
-        </ul>
+        <nav class="footer__sub-menu">
+            <ul>
+                <li class="footer-list__item">Product</li>
+                <li class="footer-list__item">Download</li>
+                <li class="footer-list__item">Pricing</li>
+                <li class="footer-list__item">Locations</li>
+                <li class="footer-list__item">Server</li>
+                <li class="footer-list__item">Countries</li>
+                <li class="footer-list__item">Blog</li>
+            </ul>
+            <ul>
+                <li class="footer-list__item">Engage</li>
+                <li class="footer-list__item">LaslesVPN</li>
+                <li class="footer-list__item">FAQ</li>
+                <li class="footer-list__item">Tutorials</li>
+                <li class="footer-list__item">About Us</li>
+                <li class="footer-list__item">Privacy Policy</li>
+                <li class="footer-list__item">Terms of Service</li>
+            </ul>
+            <ul>
+                <li class="footer-list__item">Earn Money</li>
+                <li class="footer-list__item">Affiliate</li>
+                <li class="footer-list__item">Become Partner</li>
+            </ul>
+        </nav>
     </footer>
     <div class="modal hide" id="modal">
         <form action="/" method="POST" class="signUp-form animate" id="singUp">
             <div class="signUp-form__content">
                 <div class="signUp-form__input">
-                    <input type="text" name="login" placeholder="Username" required>
+                    <input type="text" name="login" placeholder="Username" required />
                 </div>
                 <div class="signUp-form__input">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required />
                 </div>
                 <div class="signUp-form__input">
                     <label for="agreement">Agreement</label>
-                    <input type="checkbox" name="agreement" required>
+                    <input type="checkbox" name="agreement" required />
                 </div>
             </div>
             <div class="signUp-form__buttons">

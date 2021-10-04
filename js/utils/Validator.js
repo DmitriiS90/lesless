@@ -74,24 +74,10 @@ class Validator {
     static validatePassword(value) {
         const pswLength = /[\w]{6,12}$/;
         return value.match(pswLength) === null ? 'Пароль слишком короткий' : '';
-
-        // if (value.match(pswLength) === null) {
-        //     return true;
-        // }
-
-        // return false;
-
     }
     static validateLogin(value) {
         const login = /^[a-z0-9.]+@[a-z0-9]+(\.[a-z]+)+$/i;
         return value.match(login) === null ? 'Email должен содержать @' : '';
-
-        // if (value.match(login) === null) {
-        //     return true;
-        // }
-
-        // return false;
-
     }
 
     /*static setError(errors) {

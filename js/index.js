@@ -41,7 +41,7 @@ window.onload = function () {
         }
     };
 
-    class SingUpForm {
+    class SignUpForm {
         static inputLogin = document.querySelector("input[name='login']")
         static inputPassword = document.querySelector("input[name='password']")
         static cancelButton = document.getElementById('cancelButton');
@@ -50,6 +50,8 @@ window.onload = function () {
         static inputs = document.querySelectorAll('input[name]');
 
         static init() {
+            this.cancelButton.addEventListener('click', () => handleModalShow(true))
+            this.submitButton.addEventListener('click', SignUpForm.submit);
             this.setInputListeners();
         }
 
@@ -73,5 +75,5 @@ window.onload = function () {
 
     checkCurrentUser()
 
-    SingUpForm.init();
+    SignUpForm.init();
 }
