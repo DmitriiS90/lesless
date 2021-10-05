@@ -32,34 +32,39 @@
                 </li>
             </ul>
         </nav>
-        <button class="button--outline header__button" id="singUpButton">
-            Sign Up
-        </button>
+        <div class="header__buttons">
+            <button class="button" id="singInButton">
+                Sign In
+            </button>
+            <button class="button--outline" id="singUpButton">
+                Sign Up
+            </button>
+        </div>
     </header>
     <main class="container">
         <section class="about" id="about">
             <div class="about__info">
-                <h1 class="about__title title">Want anything to be easy with LaslesVPN.</h1>
+                <h1 class="about__title">Want anything to be easy with <span>LaslesVPN.</span></h1>
                 <p class="about__text text">
                     Provide a network for all your needs with ease and fun using
                     LaslesVPN discover interesting features from us.
                 </p>
-                <button class="primary-button" id="startButton">Get Started</button>
+                <button class="button--primary" id="startButton">Get Started</button>
             </div>
             <img class="about__img" src="assets/img/Illustration_1.png" alt="Illustration_1" />
         </section>
         <section class="statistics">
             <div class="statistics__item">
                 <img src="assets/svg/user.svg" alt="user" />
-                <p><span>90+</span> Users</p>
+                <div class="statistics__info"><span>90+</span> Users</div>
             </div>
             <div class="statistics__item">
                 <img src="assets/svg/location.svg" alt="location" />
-                <p><span>30+</span> Locations</p>
+                <div class="statistics__info"><span>30+</span> Locations</div>
             </div>
             <div class="statistics__item">
                 <img src="assets/svg/server.svg" alt="server" />
-                <p><span>50+</span> Servers</p>
+                <div class="statistics__info"><span>50+</span> Servers</div>
             </div>
         </section>
         <section class="features" id="features">
@@ -89,7 +94,7 @@
             <div class="tariffs-packages">
                 <div class="tariffs-packages__item">
                     <img src="assets/img/free.png" alt="free package Illustration" />
-                    <h3>Free Plan</h3>
+                    <h3 class="tariffs-packages__title">Free Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
                         <li>Encrypted Connection</li>
@@ -103,7 +108,7 @@
                 </div>
                 <div class="tariffs-packages__item">
                     <img src="assets/img/standard.png" alt="standard package Illustration" />
-                    <h3>Standard Plan</h3>
+                    <h3 class="tariffs-packages__title">Standard Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
                         <li>Encrypted Connection</li>
@@ -118,7 +123,7 @@
                 </div>
                 <div class="tariffs-packages__item">
                     <img src="assets/img/premium.png" alt="premium package Illustration" />
-                    <h3>Premium Plan</h3>
+                    <h3 class="tariffs-packages__title">Premium Plan</h3>
                     <ul class="tariffs-packages__list">
                         <li>Unlimited Bandwitch</li>
                         <li>Encrypted Connection</li>
@@ -153,86 +158,14 @@
                     pleasure when using this crazy feature.
                 </p>
             </div>
-            <div class="slider-wrapper">
-                <input checked type="radio" name="slider" id="robert" />
-                <input type="radio" name="slider" id="christy" />
-                <input type="radio" name="slider" id="kim" />
-                <input type="radio" name="slider" id="jou" />
-                <div class="slider">
-                    <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_1.svg" alt="slide Viezh Robert" />
-                        <h5>
-                            Viezh Robert <br />
-                            <span>Warsaw, Poland</span>
-                        </h5>
-                        <div class="slider__star">4.5</div>
-                        <p>
-                            “Wow... I am very happy to use this VPN, it turned out to be
-                            more than my expectations and so far there have been no
-                            problems. LaslesVPN always the best”.
-                        </p>
-                    </div>
-                    <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Yessica Christy" />
-                        <h5>
-                            Yessica Christy <br />
-                            <span>Shanxi, China</span>
-                        </h5>
-                        <div class="slider__star">4.5</div>
-                        <p>
-                            “I like it because I like to travel far and still can connect
-                            with high speed.”.
-                        </p>
-                    </div>
-                    <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_2.svg" alt="slide Kim Young Jou" />
-                        <h5>
-                            Kim Young Jou <br />
-                            <span>Seoul, South Korea</span>
-                        </h5>
-                        <div class="slider__star">4.5</div>
-                        <p>
-                            “This is very unusual for my business that currently requires a
-                            virtual private network that has high security.”.
-                        </p>
-                    </div>
-                    <div class="slider__card">
-                        <img src="assets/svg/ellipse_175_3.svg" alt="slide Kim Young Jou" />
-                        <h5>
-                            Kim Young Jou <br />
-                            <span>Seoul, South Korea</span>
-                        </h5>
-                        <div class="slider__star">4.5</div>
-                        <p>
-                            “This is very unusual for my business that currently requires a
-                            virtual private network that has high security.”.
-                        </p>
-                    </div>
-                </div>
-                <div class="slider__controls">
-                    <div class="controls__switches">
-                        <label for="robert"></label>
-                        <label for="christy"></label>
-                        <label for="kim"></label>
-                        <label for="jou"></label>
-                    </div>
-                    <div class="controls__buttons">
-                        <button>
-                            <img src="assets/svg/left.svg" alt="left" />
-                        </button>
-                        <button>
-                            <img src="assets/svg/right.svg" alt="right" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+            
         </section>
         <section class="subscribe" id="subscribe">
             <div class="subscribe__header">
                 <h2 class="subscribe__title title">Subscribe Now for Get Special Features!</h2>
                 <p class="subscribe__text text">Let's subscribe with us and find the fun.</p>
             </div>
-            <button class="primary-button" id="subscribeButton">
+            <button class="button--primary" id="subscribeButton">
                 Subscribe Now
             </button>
         </section>
@@ -240,14 +173,16 @@
     <footer>
         <div class="footer__info">
             <img class="logo" src="assets/svg/logo.svg" alt="logo" />
-            <span>LaslesVPN is a private virtual network that has unique features and
-                has high security.</span>
+            <div class="footer__text">
+                <span>LaslesVPN is a private virtual network that</span>
+                <span>has unique features and has high security.</span>
+            </div>
             <div class="footer__links">
                 <a href="#"><img src="assets/svg/facebook.svg" alt="facebook" /></a>
                 <a href="#"><img src="assets/svg/twitter.svg" alt="twitter" /></a>
                 <a href="#"><img src="assets/svg/instagram.svg" alt="instagram" /></a>
             </div>
-            <span>&copy 2020 LaslesVPN</span>
+            <span class="footer__symbol">&copy 2020 LaslesVPN</span>
         </div>
         <nav class="footer__sub-menu">
             <ul>
@@ -300,5 +235,4 @@
         </form>
     </div>
 </body>
-
 </html>
