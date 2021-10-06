@@ -1,0 +1,97 @@
+@media only screen and (max-width: 320px) {
+    .container {
+        max-width: 20rem;
+        padding: 0 1.25rem;
+    }
+    .title{
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
+    header {
+        flex-direction: column;
+    }
+    .main-menu__list{
+        line-height: 1.7rem;
+        width: 100%;
+        font-size: 0.5rem;
+        padding: 0;
+        background-color: var(--smart-white);
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .header__buttons{
+        display: none;
+    }
+    .button--primary{
+        display: block;
+        margin: 0 auto;
+        padding: 1rem 3rem;
+    }
+    .about{
+        flex-direction: column-reverse;
+        padding: 3rem 0;
+    }
+    .about .about__title{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    .statistics{
+        flex-direction: column;
+    }
+    .statistics__item {
+        margin-bottom: 3rem;
+        padding: 0 0 3rem 0;
+        border-right: none;
+        border-bottom: 2px solid var(--weiss);
+      }
+    .statistics__item:last-of-type {
+        padding: 0;
+      }
+    .features{
+        flex-direction: column;
+        padding: 3rem 0;
+    }
+    .tariffs{
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+    .tariffs__header .tariffs__text{
+        padding: 0;
+    }
+    .tariffs .tariffs-packages{
+        flex-direction: column;
+    }
+    .tariffs .tariffs-packages__item{
+        margin: 1.25rem 0 0 0;
+        padding: 2.5rem;
+    }
+    .map{
+        flex-direction: column;
+    }
+    .map .map__header{
+        padding: 3rem 0 5rem 0;
+    }
+    .map img{
+        width: 100%;
+    }
+    .stories{
+        flex-direction: column;
+    }
+    .subscribe{
+        flex-direction: column;
+        padding: 3.532rem 20px;
+    }
+    .subscribe .subscribe__title{
+        max-width: 10rem;
+    }
+    footer{
+        flex-direction: column;
+        padding: 0;
+    }
+    footer .footer__sub-menu{
+        padding: 0;
+        flex-direction: column;
+    }
+}

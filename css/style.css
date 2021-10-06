@@ -53,6 +53,7 @@ header {
 }
 .main-menu__list a:hover{
   border-bottom: 0.125rem solid;
+  color: var(--pimento);
 }
 .main-menu .main-menu__list-link {
   padding: 0.625rem 1.25rem;
@@ -140,14 +141,14 @@ header {
   color: var(--black-blue);
 }
 .features {
-  padding-top: 9.375rem;
+  padding-top: 5.938rem;
   padding-bottom: 9.375rem;
   display: flex;
   justify-content: space-between;
 }
 .features__info {
   max-width: 26.7rem;
-  height: fit-content;
+  padding-top: 3.125rem;
 }
 .features__info .features__title {
   font-weight: 500;
@@ -199,6 +200,8 @@ header {
   border: 2px solid #dddddd;
   box-sizing: border-box;
   border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
 }
 .tariffs-packages__item:last-of-type{
   margin-right: 0;
@@ -216,8 +219,8 @@ header {
   line-height: 1.875rem;
 }
 .tariffs-packages__item .tariffs-packages__list {
+  flex-grow: 1;
   list-style: none;
-  height: 13.634rem;
 }
 .tariffs-packages__list li {
   text-align: left;
@@ -397,7 +400,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.567rem 4.375rem;
+  padding: 3.532rem 4.375rem;
   background: var(--white);
   border-radius: 0.6rem;
   position: relative;
@@ -412,7 +415,7 @@ header {
 }
 footer {
   margin-top: -6rem;
-  padding: 0 30rem;
+  padding: 0 14rem;
   display: flex;
   justify-content: space-between;
   background: var(--smart-white);
@@ -420,19 +423,20 @@ footer {
 footer .footer__info {
   display: flex;
   flex-direction: column;
-  padding: 9.375rem 0rem;
+  padding: 9.375rem;
 }
 .footer__info .footer__text {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 0;
+  padding: 1.25rem 0 0 0;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.875rem;
   color: var(--dunkelgrau);
 }
 footer .footer__sub-menu {
-  padding: 9.4rem 0 0 9.4rem;
+  width: fit-content;
+  padding: 9.4rem 9.4rem 0 7rem;
   display: flex;
   justify-content: space-between;
   flex: 1 0 auto;
@@ -451,6 +455,16 @@ footer .footer-list__item:nth-child(1) {
   font-size: 1.1rem;
   line-height: 1.875rem;
   color: var(--black-blue);
+}
+.footer__links{
+  padding: 1.875rem 0;
+}
+.footer__links a{
+  margin-right: 1.25rem;
+}
+.footer__links img{
+  border-radius: 50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .footer__symbol{
   font-weight: 500;
