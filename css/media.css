@@ -1,28 +1,101 @@
+@media only screen and (max-width: 1024px) {
+    .container{
+        max-width: 58.5rem;
+        margin: 0 auto;
+    }
+    .title{
+        font-size: 2rem;
+        line-height: 2.125rem;
+    }
+    .about .about__title{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .button--outline {
+        padding: 0.75rem 2rem;
+    }
+    .button--primary{
+        padding: 1rem 5rem;
+    }
+    .main-menu .main-menu__list-link {
+        padding: 0.625rem 0.5rem;
+    }
+    .features{
+        padding: 4rem 0;
+    }
+    .tariffs{
+        padding: 2rem 0;
+    }
+    .tariffs__header .tariffs__text{
+        padding: 0;
+    }
+    .tariffs .tariffs-packages__item{
+        margin: 0 1rem;
+        padding: 2.5rem;
+    }
+    .map .map__header{
+        padding: 4rem 0;
+    }
+    .map img{
+        width: 100%;
+    }
+    footer{
+        padding: 0;
+    }
+    footer .footer__info{
+        padding: 9rem 2rem 5rem 4rem;
+    }
+    footer .footer__sub-menu {
+        padding: 9.4rem 3em 0 3rem;
+    }
+}
+
 @media only screen and (max-width: 320px) {
     .container {
         max-width: 20rem;
-        padding: 0 1.25rem;
+        padding: 1rem 1.25rem;
     }
     .title{
-        font-size: 1.7rem;
+        font-size: 1.75rem;
         line-height: 2rem;
     }
-    header {
+    .column{
         flex-direction: column;
     }
-    .main-menu__list{
-        line-height: 1.7rem;
+    .main-menu{
+        display: none;
+    }
+    .header__buttons .button{
+        display: none;
+    }
+    .header__buttons-mobile{
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+    .mobile-menu{
+        display: flex;
+        justify-content: space-around;
         width: 100%;
-        font-size: 0.5rem;
-        padding: 0;
-        background-color: var(--smart-white);
+        background-color: var(--weiss);
         position: fixed;
         left: 0;
         bottom: 0;
         z-index: 1;
     }
-    .header__buttons{
-        display: none;
+    .mobile-menu .mobile-menu__link{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: var(--dunkelgrau);
+        text-decoration: none;
+        font-size: 0.75rem;
+        align-items: center;
+        padding: 0.75rem 0;
+        flex-grow: 1;
+    }
+    .mobile-menu img{
+        width: 1.5rem;
     }
     .button--primary{
         display: block;
@@ -31,30 +104,35 @@
     }
     .about{
         flex-direction: column-reverse;
-        padding: 3rem 0;
+        padding: 0 0 3rem 0;
+    }
+    .about__img{
+        padding: 0 0 1.5rem 0;
     }
     .about .about__title{
         font-size: 2rem;
         line-height: 2.5rem;
     }
     .statistics{
-        flex-direction: column;
+        padding: 2.5rem 2.375rem 2.5rem 2.375rem
     }
     .statistics__item {
         margin-bottom: 3rem;
         padding: 0 0 3rem 0;
         border-right: none;
         border-bottom: 2px solid var(--weiss);
-      }
+    }
     .statistics__item:last-of-type {
         padding: 0;
-      }
+        margin: 0;
+    }
+    .statistics__item .statistics__info{
+        padding-left: 1.2rem;
+    }
     .features{
-        flex-direction: column;
         padding: 3rem 0;
     }
     .tariffs{
-        flex-direction: column;
         padding: 0.5rem 0;
     }
     .tariffs__header .tariffs__text{
@@ -67,31 +145,36 @@
         margin: 1.25rem 0 0 0;
         padding: 2.5rem;
     }
-    .map{
-        flex-direction: column;
-    }
     .map .map__header{
-        padding: 3rem 0 5rem 0;
+        padding: 3.2rem 0;
     }
     .map img{
         width: 100%;
     }
-    .stories{
-        flex-direction: column;
+    .map img:last-of-type{
+        height: 5rem;
     }
     .subscribe{
-        flex-direction: column;
         padding: 3.532rem 20px;
     }
     .subscribe .subscribe__title{
         max-width: 10rem;
     }
+    .subscribe .subscribe__header{
+        margin-bottom: 1rem;
+    }
     footer{
-        flex-direction: column;
         padding: 0;
+        margin: 0;
+    }
+    footer .footer__info{
+        padding: 3rem 2rem 5rem 2rem;
     }
     footer .footer__sub-menu{
-        padding: 0;
-        flex-direction: column;
+        display: none;
+    }
+    .signUp-form{
+        width: 100%;
+        margin: 0;
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
         rel="stylesheet" />
     <script type="module" src="/js/index.js"></script>
 </head>
+
 <body>
     <header class="container">
         <img class="logo" src="assets/svg/logo.svg" alt="LaslesVPN Logo" />
@@ -33,11 +35,29 @@
                 </li>
             </ul>
         </nav>
+        <nav class="mobile-menu">
+            <a href="#" class="mobile-menu__link">
+                <img src="./assets/svg/about.svg" alt="about">
+                <span>about</span>
+            </a>
+            <a href="#features" class="mobile-menu__link">
+                <img src="./assets/svg/feature.svg" alt="features">
+                <span>features</span>
+            </a>
+            <a href="#tariffs" class="mobile-menu__link">
+                <img src="./assets/svg/pricing.svg" alt="tariffs">
+                <span>tariffs</span>
+            </a>
+            <a href="#subscribe" class="mobile-menu__link">
+                <img src="./assets/svg/testimonial.svg" alt="subscribe">
+                <span>subscribe</span>
+            </a>
+        </nav>
         <div class="header__buttons">
             <button class="button" id="singInButton">
                 Sign In
             </button>
-            <button class="button--outline" id="singUpButton">
+            <button class="header__buttons-mobile button--outline" id="singUpButton">
                 Sign Up
             </button>
         </div>
@@ -54,7 +74,7 @@
             </div>
             <img class="about__img" src="assets/img/Illustration_1.png" alt="Illustration_1" />
         </section>
-        <section class="statistics">
+        <section class="statistics column">
             <div class="statistics__item">
                 <img src="assets/svg/user.svg" alt="user" />
                 <div class="statistics__info"><span>90+</span> Users</div>
@@ -68,7 +88,7 @@
                 <div class="statistics__info"><span>50+</span> Servers</div>
             </div>
         </section>
-        <section class="features" id="features">
+        <section class="features column" id="features">
             <img class="features__img" src="assets/img/Illustration_2.png" alt="Illustration_2" />
             <div class="features__info">
                 <h2 class="features__title title">We Provide Many Features You Can Use</h2>
@@ -84,7 +104,7 @@
                 </ul>
             </div>
         </section>
-        <section class="tariffs" id="tariffs">
+        <section class="tariffs column" id="tariffs">
             <div class="tariffs__header">
                 <h2 class="tariffs__title title">Choose Your Plan</h2>
                 <p class="tariffs__text text">
@@ -151,7 +171,7 @@
             <img src="assets/img/huge_Global_1.png" alt="map global" />
             <img src="assets/img/huge_Global_2.png" alt="company global" />
         </section>
-        <section class="stories" id="stories">
+        <section class="stories column" id="stories">
             <div class="stories__header">
                 <h2 class="stories__title title">Trusted by Thousands of Happy Customer</h2>
                 <p class="stories__text text">
@@ -161,7 +181,7 @@
             </div>
 
         </section>
-        <section class="subscribe" id="subscribe">
+        <section class="subscribe column" id="subscribe">
             <div class="subscribe__header">
                 <h2 class="subscribe__title title">Subscribe Now for Get Special Features!</h2>
                 <p class="subscribe__text text">Let's subscribe with us and find the fun.</p>
