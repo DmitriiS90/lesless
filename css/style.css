@@ -292,20 +292,20 @@ header {
   padding-top: 1.25rem;
   font-weight: normal;
 }
-.slider-wrapper {
-  margin-top: 3rem;
-}
-.slider-wrapper input[name="slider"] {
-  display: none;
-}
 .slider {
+ 
+}
+.slider-list{
+  overflow: hidden;
+}
+.stick-track{
   display: flex;
   max-width: 1207px;
   margin: 0 auto;
-  overflow: hidden;
+  transition: 2s;
 }
 .slider__card {
-  flex: 0 0 400px;
+  flex: 0 0 350px;
   height: 230px;
   border: 2px solid #dddddd;
   box-sizing: border-box;
@@ -314,6 +314,12 @@ header {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+.slider__card--active{
+  border: 2px solid var(--pimento);
+}
+.control-dot--active{
+  background: var(--pimento);
 }
 .slider__card img {
   width: 50px;
@@ -349,19 +355,19 @@ header {
   color: var(--black-blue);
   padding: 0px 30px 30px 30px;
 }
-#robert:checked ~ .slider .slider__card {
+.slider #robert:checked ~ .slider .slider__card {
   transform: translate(-50px);
   transition: 2s;
 }
-#christy:checked ~ .slider .slider__card {
+.slider #christy:checked ~ .slider .slider__card {
   transform: translate(-200px);
   transition: 2s;
 }
-#kim:checked ~ .slider .slider__card {
+.slider #kim:checked ~ .slider .slider__card {
   transform: translate(-400px);
   transition: 2s;
 }
-#jou:checked ~ .slider .slider__card {
+.slider #jou:checked ~  .slider__card {
   transform: translate(-600px);
   transition: 2s;
 }

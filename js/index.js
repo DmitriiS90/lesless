@@ -1,4 +1,5 @@
 import Validator from './utils/Validator.js';
+import Slider from './utils/Slider.js';
 
 window.onload = function () {
     const handleModalShow = (isVisible = false) => {
@@ -76,4 +77,8 @@ window.onload = function () {
     checkCurrentUser()
 
     SignUpForm.init();
+
+    const slider = new Slider();
+
+    slider.init();
 }
