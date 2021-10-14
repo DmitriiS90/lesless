@@ -292,9 +292,6 @@ header {
   padding-top: 1.25rem;
   font-weight: normal;
 }
-.slider {
- 
-}
 .slider-list{
   overflow: hidden;
 }
@@ -316,7 +313,8 @@ header {
   flex-wrap: wrap;
 }
 .slider__card--active{
-  border: 2px solid var(--pimento);
+  border: 2.5px solid var(--pimento);
+  transition: 2s;
 }
 .control-dot--active{
   background: var(--pimento);

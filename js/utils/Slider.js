@@ -1,16 +1,16 @@
 class Slider {
-    sliderSize = 1207;
-
-    constructor() {
+    constructor(id, { perPage, sliderSize }) {
+        this.id = id;
+        this.sliderSize = sliderSize;
+        this.perPage = perPage;
         this.countPages;
-        this.countSlideOnPage = 3;
         this.currentPage = 1;
-        this.prevPage;
-        this.currentSlide = 1;
-        this.pagesWithSlides = [];
+        this.currentSlide = 0;
+        //this.prevPage;
+        //this.pagesWithSlides = [];
     }
 
-    init() {
+    mount() {
         const slides = document.querySelectorAll(".slider__card");
         const controlDots = document.querySelector(".controls__dots");
         const arrows = document.querySelectorAll(".controls__arrows button");
@@ -19,8 +19,7 @@ class Slider {
         if (!slides) {
             return;
         }
-
-        this.pagesWithSlides = Object.entries(slides);
+        //this.pagesWithSlides = Object.entries(slides);
 
         this.setCountPage(slides);
 
@@ -32,10 +31,19 @@ class Slider {
 
         this.setDataPage(controlDots);
 
+        this.checkDots(controlDots, track, slides);
+
+        this.moveArrows(arrows, track, slides);
+    }
+
+    checkDots(controlDots, track, slides) {
         controlDots.addEventListener("click", (event) => {
-            console.log(event.target.dataset.page, this.countPages)
-            this.prevPage = this.currentPage;
+            //this.prevPage = this.currentPage;
             this.currentPage = event.target.dataset.page;
+            this.currentSlide = event.target.dataset.page * this.perPage - this.perPage;
+
+            slides.forEach((slide) => { slide.classList.toggle("slider__card--active", false) })
+            this.addActiveClass(slides)
 
             //const slide = pages[this.currentPage].firstSlide;
             //slide.classList.toggle("slider__card--active");
@@ -43,26 +51,28 @@ class Slider {
             this.currentPage ? track.style.transform = `translate(-${this.sliderSize * (this.currentPage - 1)}px) ` : track.style.transform = "translate(0px)";
 
         });
-
-        this.moveArrows(arrows, track);
     }
 
-    moveArrows(arrows, track) {
+    moveArrows(arrows, track, slides) {
         arrows[0].addEventListener("click", () => {
-            console.log(this.currentPage)
 
-            if (this.currentPage > 1) {
-                this.currentPage--
-                track.style.transform = `translate(-${this.sliderSize * (this.currentPage - 1)}px) `
+            if (this.currentSlide > 0) {
+                this.removeActiveClass(slides)
+                this.currentSlide--
+                slides[this.currentSlide - 1].classList.toggle("slider__card--active");
+                track.style.transform = `translate(-${402 * (this.currentSlide - 1)}px) `
             }
+
         });
         arrows[1].addEventListener("click", () => {
-            console.log(this.currentPage)
 
-            if (this.currentPage < this.countPages) {
-                this.currentPage++
-                track.style.transform = `translate(-${this.sliderSize * (this.currentPage - 1)}px) `
+            if (this.currentSlide < slides.length) {
+                this.removeActiveClass(slides)
+                this.addActiveClass(slides)
+                this.currentSlide++
+                track.style.transform = `translate(-${402 * (this.currentSlide - 1)}px) `
             }
+
         });
     }
 
@@ -83,13 +93,18 @@ class Slider {
         // });
     }
 
+    removeActiveClass(slides) {
+        slides.forEach((slide) => { slide.classList.toggle("slider__card--active", false) })
+    }
+    
     addActiveClass(slides) {
-        const [firstSlide] = slides;
-        firstSlide.classList.toggle("slider__card--active");
+        // const [firstSlide] = slides;
+        // firstSlide.classList.toggle("slider__card--active");
+        slides[this.currentSlide].classList.toggle("slider__card--active");
     }
 
     setCountPage(slides) {
-        this.countPages = slides.length / this.countSlideOnPage;
+        this.countPages = slides.length / this.perPage;
     }
 };
 

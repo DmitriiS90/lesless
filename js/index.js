@@ -78,7 +78,10 @@ window.onload = function () {
 
     SignUpForm.init();
 
-    const slider = new Slider();
+    const slider = new Slider("#slider",{
+        perPage: 3,
+        sliderSize: 1207,
+    });
 
-    slider.init();
+    slider.mount();
 }
