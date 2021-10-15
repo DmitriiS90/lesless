@@ -299,7 +299,7 @@ header {
   display: flex;
   max-width: 1207px;
   margin: 0 auto;
-  transition: 2s;
+  transition: all 2s ease-out;
 }
 .slider__card {
   flex: 0 0 350px;
@@ -314,10 +314,7 @@ header {
 }
 .slider__card--active{
   border: 2.5px solid var(--pimento);
-  transition: 2s;
-}
-.control-dot--active{
-  background: var(--pimento);
+  transition: all 2s ease-in-out;
 }
 .slider__card img {
   width: 50px;
@@ -353,29 +350,16 @@ header {
   color: var(--black-blue);
   padding: 0px 30px 30px 30px;
 }
-.slider #robert:checked ~ .slider .slider__card {
-  transform: translate(-50px);
-  transition: 2s;
-}
-.slider #christy:checked ~ .slider .slider__card {
-  transform: translate(-200px);
-  transition: 2s;
-}
-.slider #kim:checked ~ .slider .slider__card {
-  transform: translate(-400px);
-  transition: 2s;
-}
-.slider #jou:checked ~  .slider__card {
-  transform: translate(-600px);
-  transition: 2s;
-}
 .slider__controls {
-  margin-top: 60px;
+  padding: 3.75rem 0 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.slider__controls label {
+.controls__dots{
+  display: none;
+}
+label {
   cursor: pointer;
   width: 15px;
   height: 15px;
@@ -384,13 +368,10 @@ header {
   border-radius: 10px;
   display: inline-block;
 }
-#robert:checked ~ .slider__controls label:nth-child(1),
-#christy:checked ~ .slider__controls label:nth-child(2),
-#kim:checked ~ .slider__controls label:nth-child(3),
-#jou:checked ~ .slider__controls label:nth-child(4) {
-  background: var(--pimento);
+.control__dot--active{
+  background-color: var(--pimento);
 }
-.slider__controls .controls__buttons {
+.slider__controls .controls__arrows {
   width: 140px;
   display: flex;
   justify-content: space-around;
