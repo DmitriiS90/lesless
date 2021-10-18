@@ -359,17 +359,22 @@ header {
 .controls__dots{
   display: none;
 }
+.active__dots{
+  display: flex;
+  justify-content: space-between;
+  width: 8rem;
+}
 label {
   cursor: pointer;
-  width: 15px;
-  height: 15px;
-  margin-left: 10px;
+  width: 1rem;
+  height: 1rem;
   background: #dde0e4;
   border-radius: 10px;
-  display: inline-block;
 }
 .control__dot--active{
   background-color: var(--pimento);
+  width: 2.875rem;
+  transition: width 0.5s ease-out 0s;
 }
 .slider__controls .controls__arrows {
   width: 140px;

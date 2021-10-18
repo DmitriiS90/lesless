@@ -21,6 +21,7 @@ class Slider {
 
         this.setCountPage();
         this.addActiveSlide()
+        this.addActiveDot()
 
         if (!this.controlDots) {
             return;
@@ -35,7 +36,7 @@ class Slider {
         this.controlDots.addEventListener("click", (event) => {
 
             this.currentPage = event.target.dataset.page;
-            this.currentSlide = event.target.dataset.page * this.perPage - this.perPage;
+            this.currentSlide = this.currentPage * this.perPage - this.perPage;
 
             this.addActiveDot()
             this.removeActiveSlide()
@@ -53,7 +54,7 @@ class Slider {
                 this.removeActiveSlide()
                 this.currentSlide--
                 this.slides[this.currentSlide - 1].classList.toggle("slider__card--active");
-                this.track.style.transform = `translate(-${402 * (this.currentSlide - 1)}px) `
+                this.track.style.transform = `translate(-${this.sliderSize / this.perPage * (this.currentSlide - 1)}px) `
             }
 
         });
@@ -63,7 +64,7 @@ class Slider {
                 this.removeActiveSlide()
                 this.addActiveSlide()
                 this.currentSlide++
-                this.track.style.transform = `translate(-${402 * (this.currentSlide - 1)}px) `
+                this.track.style.transform = `translate(-${this.sliderSize / this.perPage * (this.currentSlide - 1)}px) `
             }
 
         });
