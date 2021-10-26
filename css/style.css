@@ -299,7 +299,7 @@ header {
   display: flex;
   max-width: 1207px;
   margin: 0 auto;
-  transition: all 2s ease-out;
+  transition: all 1s ease-out;
 }
 .slider__card {
   flex: 0 0 350px;
@@ -374,7 +374,7 @@ label {
 .control__dot--active{
   background-color: var(--pimento);
   width: 2.875rem;
-  transition: width 0.5s ease-out 0s;
+  transition: width 1s ease-out 0s;
 }
 .slider__controls .controls__arrows {
   width: 140px;
@@ -486,7 +486,7 @@ footer .footer-list__item:nth-child(1) {
   margin-top: 6rem;
   border: 1px solid var(--dunkelgrau);
   border-radius: 0.6rem;
-  width: 30%;
+  max-width: 25rem;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -498,22 +498,28 @@ footer .footer-list__item:nth-child(1) {
   display: flex;
   flex-flow: column nowrap;
 }
-.signUp-form__content input {
-  margin: 1.2rem;
+.signUp-form__content .input {
+  margin: 2rem 2rem 1rem 2rem;
   padding: 0.6rem;
-  border: none;
+}
+.signUp-form__checkbox {
+   margin: 0 auto;
+   padding-top: 1rem;
+}
+.signUp-form__checkbox label {
+  background: none;
 }
 .signUp-form__content .error-message{
-  margin-top: -0.9rem;
-  padding-left: 1.2rem;
+  height: 1rem;
+  padding-left: 2rem;
   color: var(--pimento);
 }
 .error{
-  border: var(--red) 1px solid;
+  border: red 1px solid;
 }
 .signUp-form__buttons {
   text-align: center;
-  margin-top: 4.3rem;
+  margin: 3rem 0 3rem 0;
 }
 .signUp-form__buttons button {
   background-color: var(--manchester);

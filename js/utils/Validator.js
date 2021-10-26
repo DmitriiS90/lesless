@@ -17,58 +17,31 @@ class Validator {
                 this.addError(inputName, error);
                 this.setError();
             }
+
+            if (!error.length) {
+                this.clearValidation(inputName);
+            }
+
         });
     }
 
     static addError(field, error) {
-        this.errors = [...this.errors, {field, error}];
+        this.errors = [{ field, error }];
     }
 
     static setError() {
-        const [{field, error}] = this.errors;
+        const [{ field, error }] = this.errors;
         const targetInput = document.querySelector(`input[name='${field}']`);
-
         targetInput.classList.toggle('error', true);
-        targetInput.insertAdjacentHTML('afterEnd', `<span class='error-message'>${error}</span>`);
-    }
+        targetInput.dataset.error = 'true';
+        const errorTextElement = document.querySelector(`span[data-field="${field}"]`);
 
-    static isValid(name, value) {
-        if (Validator.validateEmpty(value)) {
-            return false
+        if (field && errorTextElement.innerHTML) {
+            return;
         }
 
-        if (name === 'password' && Validator.validatePassword(value)) {
-            return false
-        }
-
-        if (name === 'login' && Validator.validateLogin(value)) {
-            return false
-        }
-
-        return true;
-    }
-
-    static getErrors(formValues) {
-        const data = Object.entries(formValues);
-        const validateData = data.reduce((result, [key, value]) => {
-
-            if (Validator.validateEmpty(value)) {
-                return [...result, [key, 'Поле не должно быть пустым']]
-            }
-
-            if (key === 'password' && Validator.validatePassword(value)) {
-                return [...result, [key, 'Пароль слишком короткий']]
-            }
-
-            if (key === 'login' && Validator.validateLogin(value)) {
-                return [...result, [key, 'логин должен содержать @']]
-            }
-
-            return result;
-
-        }, [])
-
-        return validateData;
+        targetInput.classList.toggle('error');
+        errorTextElement.insertAdjacentText('beforeEnd', error);
     }
 
     static validatePassword(value) {
@@ -79,36 +52,25 @@ class Validator {
         const login = /^[a-z0-9.]+@[a-z0-9]+(\.[a-z]+)+$/i;
         return value.match(login) === null ? 'Email должен содержать @' : '';
     }
-
-    /*static setError(errors) {
-        if (!errors.length) {
-            return;
-        }
-
-        const [[field, errorMessage]] = errors;
-        const targetField = document.querySelector(`input[name=${field}]`);
-        const errorTextElement = document.querySelector(`span[data-field="${field}"]`);
-
-        if (field && errorTextElement.innerHTML) {
-            return;
-        }
-
-        if (field) {
-            targetField.classList.toggle('error', true);
-            errorTextElement.insertAdjacentText('beforeEnd', errorMessage);
-            targetField.dataset.error = 'true';
-        }
-    }*/
-
-    static clearValidation(event) {
-        const targetField = document.querySelector(`input[name='${event.target.name}']`);
-        targetField.classList.toggle('error', false);
-        document.querySelector(`span[data-field='${event.target.name}']`).remove();
-        delete event.target.dataset.error
-    }
-
     static validateEmpty(value) {
         return !value.length ? 'Поле не должно быть пустым' : '';
+    }
+
+    static clearValidation(name) {
+        const targetElement = document.querySelector(`input[name='${name}']`);
+        const errorTextElement = document.querySelector(`span[data-field="${name}"]`);
+        errorTextElement.remove();
+        targetElement.insertAdjacentHTML('afterEnd', `<span class='error-message' data-field='${name}'></span>`);
+        targetElement.classList.toggle('error', false);
+        this.errors = [];
+    }
+    static finishValidation() {
+
+        if (!this.errors.length) {
+            return true
+        }
+
+        return false;
     }
 };
 

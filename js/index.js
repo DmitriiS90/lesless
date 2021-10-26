@@ -26,7 +26,7 @@ window.onload = function () {
             }
         })
     };
-    
+
     const checkCurrentUser = () => {
         const user = JSON.parse(localStorage.getItem('auth'))
 
@@ -35,10 +35,6 @@ window.onload = function () {
             singUpButton.style.borderColor = "#A9A9A9"
             singUpButton.style.color = "#A9A9A9"
             singUpButton.style.cursor = "default"
-
-            // const userLogin = document.createElement('p')
-            // userLogin.innerHTML = user.login
-            // document.querySelector(".header__login").append(userLogin)
         }
     };
 
@@ -63,14 +59,16 @@ window.onload = function () {
         }
 
         static submit() {
-            const formData = new FormData(document.forms.singUp);
-            const formValues = Object.fromEntries(formData.entries());
+            if (Validator.finishValidation()) {
+                const formData = new FormData(document.forms.singUp);
+                const formValues = Object.fromEntries(formData.entries());
 
-            localStorage.setItem('auth', JSON.stringify(formValues));
-            window.location.replace('http://127.0.0.1:5500/');
+                localStorage.setItem('auth', JSON.stringify(formValues));
+                window.location.replace('http://127.0.0.1:5500/');
+            }
         }
     };
-    
+
 
     initialButtons();
 
@@ -78,7 +76,7 @@ window.onload = function () {
 
     SignUpForm.init();
 
-    const slider = new Slider("#slider",{
+    const slider = new Slider("#slider", {
         perPage: 3,
         sliderSize: 1207,
     });
