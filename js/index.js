@@ -47,7 +47,10 @@ window.onload = function () {
         static inputs = document.querySelectorAll('input[name]');
 
         static init() {
-            this.cancelButton.addEventListener('click', () => handleModalShow(true))
+            this.cancelButton.addEventListener('click', () => {
+                handleModalShow(true);
+                Validator.resetValidator();
+            })
             this.submitButton.addEventListener('click', SignUpForm.submit);
             this.setInputListeners();
         }

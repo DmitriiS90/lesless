@@ -499,15 +499,8 @@ footer .footer-list__item:nth-child(1) {
   flex-flow: column nowrap;
 }
 .signUp-form__content .input {
-  margin: 2rem 2rem 1rem 2rem;
+  margin: 1rem 2rem 0rem 2rem;
   padding: 0.6rem;
-}
-.signUp-form__checkbox {
-   margin: 0 auto;
-   padding-top: 1rem;
-}
-.signUp-form__checkbox label {
-  background: none;
 }
 .signUp-form__content .error-message{
   height: 1rem;
@@ -522,7 +515,8 @@ footer .footer-list__item:nth-child(1) {
   margin: 3rem 0 3rem 0;
 }
 .signUp-form__buttons button {
-  background-color: var(--manchester);
+  cursor: pointer;
+  background-color: var(--pimento);
   border: none;
   border-radius: 0.6rem;
   color: var(--white);
@@ -531,6 +525,11 @@ footer .footer-list__item:nth-child(1) {
   text-decoration: none;
   font-size: 1rem;
   margin-bottom: 0.3rem;
+}
+.disabled {
+  cursor: default;
+  background: "#A9A9A9";
+  border-color: "#A9A9A9";
 }
 .animate {
   animation: animatezoom 0.5s;
